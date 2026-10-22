@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>平湖雷达 · 2026年10月21日</title>
+<style>
+  :root{
+    --paper:#f4efe6;
+    --paper-hi:#fbf8f2;
+    --ink:#191612;
+    --ink-2:#4a433a;
+    --muted:#8a8073;
+    --line:#d9cfbe;
+    --line-2:#e8e0d2;
+    --accent:#9c3d2e;
+    --accent-soft:#c98b7d;
+    --serif:"LXGW WenKai","霞鹜文楷","Songti SC","STSong",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:radial-gradient(circle at 22% 18%,rgba(255,255,255,.55),transparent 45%),
+                     radial-gradient(circle at 78% 82%,rgba(255,250,240,.5),transparent 50%);
+    mix-blend-mode:soft-light;
+  }
+  .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 32px 120px}
+
+  /* ── 报头 ── */
+  header{padding:56px 0 0}
+  .kicker{
+    display:flex;align-items:baseline;justify-content:space-between;
+    font-size:11px;letter-spacing:.32em;color:var(--muted);
+    text-transform:uppercase;border-bottom:1px solid var(--ink);
+    padding-bottom:10px;
+  }
+  .kicker b{font-weight:600;color:var(--ink);letter-spacing:.42em}
+  h1{
+    font-family:var(--serif);font-weight:400;font-size:44px;line-height:1.25;
+    letter-spacing:.02em;margin:26px 0 6px;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .dateline{
+    font-family:var(--serif);font-size:15px;color:var(--ink-2);
+    display:flex;gap:14px;align-items:center;margin-bottom:34px;
+  }
+  .dateline span.sep{color:var(--line);}
+  .dateline .w{color:var(--muted);font-size:13px;letter-spacing:.1em}
+
+  /* ── 判断 ── */
+  .verdict{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:30px 0 28px;margin-bottom:14px;
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .verdict .label{font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:10px}
+  .verdict .big{font-family:var(--serif);font-size:38px;line-height:1.3;letter-spacing:.04em}
+  .verdict p{font-size:13.5px;color:var(--ink-2);margin-top:12px;max-width:46ch}
+  .stamp{
+    width:92px;height:92px;border:1px solid var(--accent);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    color:var(--accent);font-family:var(--serif);font-size:13px;letter-spacing:.16em;
+    text-align:center;line-height:1.5;transform:rotate(-7deg);opacity:.85;
+  }
+
+  /* ── 导航 ── */
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 52px}
+  nav a{
+    font-size:12px;letter-spacing:.14em;color:var(--ink-2);text-decoration:none;
+    border:1px solid var(--line);border-radius:999px;padding:6px 15px;
+    background:var(--paper-hi);transition:.25s;
+  }
+  nav a:hover{background:var(--ink);color:var(--paper-hi);border-color:var(--ink)}
+
+  /* ── 区块标题 ── */
+  .sec{margin:0 0 26px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:30px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.06em}
+  .sec-head .n{font-size:11px;color:var(--muted);letter-spacing:.2em}
+
+  /* ── 线索卡 ── */
+  .card{
+    background:var(--paper-hi);border:1px solid var(--line-2);
+    margin-bottom:16px;position:relative;transition:border-color .3s,box-shadow .3s,transform .3s;
+  }
+  .card:hover{border-color:var(--accent-soft);box-shadow:0 10px 30px -22px rgba(80,50,30,.5)}
+  .card.open{border-color:var(--accent-soft)}
+  .card-top{
+    padding:24px 26px 20px;cursor:pointer;display:grid;
+    grid-template-columns:auto 1fr auto;gap:16px;align-items:start;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .card-top:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .idx{
+    font-family:var(--serif);font-size:12px;color:var(--accent);
+    border:1px solid var(--accent-soft);border-radius:50%;
+    width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+    margin-top:3px;
+  }
+  .card h3{
+    font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.55;
+    letter-spacing:.015em;
+  }
+  .card h3 small{
+    display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);
+    letter-spacing:.1em;margin-top:7px;
+  }
+  .chev{
+    width:22px;height:22px;position:relative;margin-top:5px;flex:0 0 auto;
+    transition:transform .35s cubic-bezier(.4,0,.2,1);
+  }
+  .chev::before,.chev::after{
+    content:"";position:absolute;top:50%;width:9px;height:1px;background:var(--ink-2);
+  }
+  .chev::before{left:2px;transform:rotate(45deg)}
+  .chev::after{right:2px;transform:rotate(-45deg)}
+  .card.open .chev{transform:rotate(180deg)}
+
+  .card-body{
+    display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1);
+  }
+  .card.open .card-body{grid-template-rows:1fr}
+  .card-body > div{overflow:hidden}
+
+  dl{padding:2px 26px 0 68px;display:grid;gap:0}
+  dl > div{
+    display:grid;grid-template-columns:76px 1fr;gap:16px;
+    padding:13px 0;border-top:1px solid var(--line-2);
+  }
+  dt{font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:3px}
+  dd{font-size:14px;color:var(--ink-2);line-height:1.85}
+  dd strong{color:var(--ink);font-weight:600}
+  dd em{font-style:normal;color:var(--accent);font-weight:500}
+
+  .src{
+    margin:14px 26px 22px 68px;padding:14px 16px;
+    background:var(--paper);border-left:2px solid var(--accent-soft);
+    font-size:12.5px;color:var(--ink-2);
+  }
+  .src .t{font-size:10.5px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .links a{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:12px;text-decoration:none;color:var(--accent);
+    border:1px solid var(--accent-soft);border-radius:3px;
+    padding:4px 10px;background:#fff;transition:.2s;
+    font-family:var(--sans);
+  }
+  .links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .links a::after{content:"↗";font-size:10px;opacity:.7}
+  .nolink{display:inline-block;font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:3px;padding:4px 10px}
+
+  /* ── 时间轴 ── */
+  .timeline{position:relative;padding-left:8px}
+  .tl{display:grid;grid-template-columns:132px 1fr;gap:22px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+  .tl:last-child{border-bottom:0}
+  .tl .d{font-family:var(--serif);font-size:19px;color:var(--accent);letter-spacing:.03em;white-space:nowrap}
+  .tl .d small{display:block;font-family:var(--sans);font-size:10.5px;color:var(--muted);letter-spacing:.14em;margin-top:3px}
+  .tl p{font-size:14px;color:var(--ink-2)}
+  .tl p b{color:var(--ink);font-weight:600}
+
+  /* ── 排除 ── */
+  details.excl{border-top:1px solid var(--ink);padding-top:16px;margin-top:64px}
+  details.excl summary{
+    cursor:pointer;font-size:12px;letter-spacing:.22em;color:var(--muted);
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  details.excl summary::-webkit-details-marker{display:none}
+  details.excl summary::after{content:"展开";font-size:11px;letter-spacing:.1em;color:var(--accent)}
+  details.excl[open] summary::after{content:"收起"}
+  table{width:100%;border-collapse:collapse;margin-top:18px;font-size:12.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+  th{font-weight:500;font-size:10.5px;letter-spacing:.16em;color:var(--muted)}
+  td:first-child{color:var(--ink);width:46%}
+  td small{display:block;font-size:10px;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+  td a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+
+  footer{
+    margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--muted);line-height:2;letter-spacing:.02em;
+  }
+  footer b{color:var(--ink-2);font-weight:500}
+  @media (max-width:620px){
+    .wrap{padding:0 20px 90px}
+    h1{font-size:32px}
+    .verdict{grid-template-columns:1fr;gap:16px}
+    .stamp{width:74px;height:74px;font-size:11px;justify-self:start}
+    dl{padding-left:26px}
+    .src{margin-left:26px}
+    .tl{grid-template-columns:1fr;gap:4px}
+    .card-top{padding:20px 18px 16px;gap:12px}
+  }
+</style>
+</head>
+<body>
+<div style="font:12px/1.7 -apple-system,'Hiragino Sans GB',sans-serif;color:#8a8073;padding:9px 32px;border-bottom:1px solid #d9cfbe;background:#f4efe6;letter-spacing:.08em">平湖雷达 · 内部参考，请勿外传 · <a href="./archive/index.html" style="color:#9c3d2e;text-decoration:none">往期</a></div>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">
+      <b>平湖雷达</b>
+      <span>第 002 期 · 15:30 刷新</span>
+    </div>
+    <h1>今天没有值得动的<br>但有一件事<em>正在逼近</em></h1>
+    <div class="dateline">
+      <span>2026 年 10 月 21 日</span>
+      <span class="sep">／</span>
+      <span>星期三</span>
+      <span class="sep">／</span>
+      <span class="w">晴转风雨，窗口 22–24 日</span>
+    </div>
+  </header>
+
+  <section class="verdict">
+    <div>
+      <div class="label">判 断</div>
+      <div class="big">建议先放，观察三天。</div>
+      <p>上午门户与省市两级都没有新的公开文件；下午补到两条公示——一条园区规划环评、一条文化产业专项资金的拟奖励公示（名单在附件，附件未挂）——仍是程序，不构成动作。昨天那四条规划批前公示同样属常规手续。唯一带时间压力的是台风，但本地口径还没出来——先打电话，别先写稿。</p>
+    </div>
+    <div class="stamp">零<br>值 得 动</div>
+  </section>
+
+  <nav>
+    <a href="#watch">可以留意 · 3</a>
+    <a href="#days">接下来的日子</a>
+    <a href="#excl">今天排除了什么</a>
+  </nav>
+
+  <section id="watch">
+    <div class="sec-head">
+      <h2>可以留意</h2>
+      <span class="n">点 开 看 细 节 与 出 处</span>
+    </div>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">1</span>
+        <h3>台风"蔷琵"北上，平湖本地的量级还是一张白纸
+          <small>嘉兴已报 22–24 日明显风雨 · 东海海面 12–14 级</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>风雨窗口从今天开始，<strong>22 到 24 日是最紧的三天</strong>。过了这三天，"防没防"就只剩事后复盘，没有现场可看。</dd></div>
+          <div><dt>先问谁</dt><dd>平湖市气象台（本地风雨量级、影响时段）→ 市防指办（响应等级、沿海作业与在建工地停工口径）→ 市农业农村局（晚稻、大棚）。</dd></div>
+          <div><dt>值不值</dt><dd>拿到气象台本地量级＋防指一份部署，就做"平湖这一天怎么防"；<em>只有嘉兴口径、没有平湖落点，就先放</em>——那是复述上级预报，不是本地新闻。</dd></div>
+          <div><dt>此刻是</dt><dd>只有落点，没有本地反应，没有增量。按规则只到"留意"，不进采写队列。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          嘉兴媒体两篇（10-20）：《17 级超强台风"蔷琵"将迎生命史巅峰强度》《降温降雨！这天起影响嘉兴》。抓取未返回原文直链，需在站内检索核对。浙江天气网口径：东海南部 22–24 日 12–14 级。〈缺〉平湖本级全部一手口径。
+          <div class="links">
+            <a href="https://www.jiaxing.gov.cn/" target="_blank" rel="noopener">嘉兴市政府门户</a>
+            <a href="https://www.pinghu.gov.cn/" target="_blank" rel="noopener">平湖市政府门户</a>
+            <span class="nolink">原稿无直链</span>
+          </div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">2</span>
+        <h3>78 家企业"出征"广交会，数字之外全是空白
+          <small>省级媒体今晨已发 · 参展结构、成交、订单去向均未披露</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>展会正在进行，<strong>企业主人还在广州</strong>，现在打电话能问到现场报价与客流；等闭幕回来，只剩一份总结稿。</dd></div>
+          <div><dt>先问谁</dt><dd>市商务局外贸科（参展企业名单、展位数、本届与上届对比）；服装、箱包、童车三大行业协会（订单报价变化）。</dd></div>
+          <div><dt>值不值</dt><dd>拿到"78 家"之外的成交额或新兴市场占比，就做外贸结构稿；<em>只有这一个数字就先放</em>——省级媒体已经写过，本地再写等于转载。</dd></div>
+          <div><dt>缺什么</dt><dd>企业名单、成交额、上届基数。稿子里只有家数，没有金额与去向。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          本地媒体稿 1 条（2026-10-21，《"出征"广交会！平湖 78 家企业带着新品抢订单》）。抓取只回标题与日期，未回正文与数据来源，故"78 家"仍是媒体自述。
+          <div class="links">
+            <a href="https://tidenews.com.cn/search.html?keyword=%E5%B9%B3%E6%B9%96" target="_blank" rel="noopener">潮新闻搜「平湖」</a>
+            <span class="nolink">原稿无直链</span>
+          </div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">3</span>
+        <h3>一条微博说"首个国产 Token 优化工厂"落在平湖
+          <small>运营方称是石科技 · 官方口径与投资规模均未见</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>若属实，这是<strong>首次落地</strong>，越早核越能拿到一手；若"首个"是宣传口径，这两个字本身就是可追问的点。</dd></div>
+          <div><dt>先问谁</dt><dd>市经信局数字经济科（项目备案、算力规模、落地园区）；是石科技（投资额、客户、与平湖的协议条款）；经开区或独山港招商部门（用地用房与政策对价）。</dd></div>
+          <div><dt>值不值</dt><dd>拿到备案信息或企业书面确认，就做"平湖凭什么落一个 Token 工厂"；<em>只有一条微博就先放</em>——标题即未核，不能当事实。</dd></div>
+          <div><dt>此刻是</dt><dd>证据仅到摘要级：一个转述式微博，没有原文链接、没有主体说明。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          微博 1 条（2026-10-19，账号"大声"）："首个国产 Token 优化工厂'拓元'落户平湖，是石科技作为平湖本土成长起来的一匹……"。原文在此，可自行判断可信度。〈缺〉官方通稿、备案、企业声明。
+          <div class="links">
+            <a href="https://weibo.com/1718259005/RnpfR9qtK" target="_blank" rel="noopener">微博原帖</a>
+            <a href="https://www.pinghu.gov.cn/" target="_blank" rel="noopener">平湖市政府门户</a>
+          </div>
+        </div>
+      </div></div>
+    </article>
+  </section>
+
+  <section id="days" style="margin-top:64px">
+    <div class="sec-head">
+      <h2>接下来的日子</h2>
+      <span class="n">四 个 日 期</span>
+    </div>
+    <div class="timeline">
+      <div class="tl">
+        <div class="d">10.22 – 10.24<small>三天</small></div>
+        <p>台风风雨窗口，东海海面 12–14 级。<b>沿海作业、在建工地、晚稻</b>三条线同时受考验。</p>
+      </div>
+      <div class="tl">
+        <div class="d">10.23 – 10.25<small>三天</small></div>
+        <p><b>第三届平湖机床展</b>（明湖博览汇）。这是它启幕之后第一个能核客流、参展结构与成交的窗口。</p>
+      </div>
+      <div class="tl">
+        <div class="d">10.24<small>星期五</small></div>
+        <p>公积金提取新政执行满半月，可以问<b>实际办理量与被拒原因</b>，不要等出争议再问。</p>
+      </div>
+      <div class="tl">
+        <div class="d">12.20<small>还有 60 天</small></div>
+        <p><b>体育中心改造</b>计划完工。合同、开工令、施工期场馆怎么开放，至今没有一份公开。</p>
+      </div>
+    </div>
+  </section>
+
+  <details class="excl" id="excl">
+    <summary>今天排除了什么（12 条）</summary>
+    <table>
+      <thead><tr><th>条目</th><th>为什么不算线索</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_a33035e6cb34a5ca081844c697aa69ac.html" target="_blank" rel="noopener">2026 年度文化产业专项资金拟奖励项目公示</a><small>10-21 14:37 发布 · 15:30 补入</small></td><td>公示期到 10-27，正文说"详见附件"，<b>页面却没有附件链接</b>——名单与金额都不在正文，暂时无从比较。留着一个现成问法：为什么公示不给明细。</td></tr>
+        <tr><td><a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_43f3c9673d6d42c4b7f9177d2ea90095.html" target="_blank" rel="noopener">新仓镇工业园区城镇单元详细规划环评公示</a><small>10-21 15:30 补入</small></td><td>规划环评属园区程序节点，单条不构成动作；同一园区连续多个项目才是产业信号</td></tr>
+        <tr><td>平湖年轻人搞起极简婚礼</td><td>生活方式软稿，无动作、无制度变化</td></tr>
+        <tr><td>"立鹤啤酒""秋月啤酒"</td><td>情怀类宣传</td></tr>
+        <tr><td>街头无人快递车怎么处理事故</td><td>有画面无触发，除非拿到事故或投诉数据</td></tr>
+        <tr><td>"三件冬衣"溯源直播节启幕</td><td>活动稿，去年同类已做，未达阈值</td></tr>
+        <tr><td>平湖 4 个"兵哥哥"夺冠</td><td>人物稿，非线索</td></tr>
+        <tr><td>平湖方言考</td><td>内容稿</td></tr>
+        <tr><td>广陈镇幸福治理学院</td><td>机构成立类通稿，无钱权期限</td></tr>
+        <tr><td>嘉兴国际法务区发布会</td><td>市级发布，平湖落点未证</td></tr>
+        <tr><td><a href="https://www.gov.cn/zhengce/202608/content_7078605.htm" target="_blank" rel="noopener">公积金提取扩围（8 月旧件）</a></td><td>非今日增量，归入长期观察</td></tr>
+        <tr><td>规划批前公示 4 条（10-20）</td><td>常规手续，昨日已记录</td></tr>
+      </tbody>
+    </table>
+  </details>
+
+  <footer>
+    <b>这一页怎么读：</b>每张卡点开有四项——为什么现在、先问谁、值不值、缺什么；带 ↗ 的按钮直接跳原文。<br>
+    <b>证据口径：</b>标题、日期、主体均未经二次核实，凡"未核"字样即为尚未取得原件；社交帖子只作找人与找现场的线索。<br>
+    <b>今日覆盖：</b>土地环评、执法处罚、农业生态三类没有数据；平湖本级气象与防指没有稳定入口。<br>
+     生成本页 2026-10-21 10:26 ｜ 15:30 按当日新到数据刷新 ｜ 外部支出 0
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('[data-card]').forEach(function(card){
+    var top = card.querySelector('.card-top');
+    function toggle(){
+      var open = card.classList.toggle('open');
+      top.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    top.addEventListener('click', toggle);
+    top.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+</script>
+</body>
+</html>

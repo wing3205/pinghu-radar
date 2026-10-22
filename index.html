@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>平湖雷达 · 2026年10月22日</title>
+<style>
+  :root{
+    --paper:#f4efe6;
+    --paper-hi:#fbf8f2;
+    --ink:#191612;
+    --ink-2:#4a433a;
+    --muted:#8a8073;
+    --line:#d9cfbe;
+    --line-2:#e8e0d2;
+    --accent:#9c3d2e;
+    --accent-soft:#c98b7d;
+    --serif:"LXGW WenKai","霞鹜文楷","Songti SC","STSong",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.85;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:radial-gradient(circle at 22% 18%,rgba(255,255,255,.55),transparent 45%),
+                     radial-gradient(circle at 78% 82%,rgba(255,250,240,.5),transparent 50%);
+    mix-blend-mode:soft-light;
+  }
+  .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 32px 120px}
+
+  header{padding:56px 0 0}
+  .kicker{
+    display:flex;align-items:baseline;justify-content:space-between;
+    font-size:11px;letter-spacing:.32em;color:var(--muted);
+    border-bottom:1px solid var(--ink);padding-bottom:10px;
+  }
+  .kicker b{font-weight:600;color:var(--ink);letter-spacing:.42em}
+  h1{
+    font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.28;
+    letter-spacing:.02em;margin:26px 0 6px;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .dateline{
+    font-family:var(--serif);font-size:15px;color:var(--ink-2);
+    display:flex;gap:14px;align-items:center;margin-bottom:34px;flex-wrap:wrap;
+  }
+  .dateline span.sep{color:var(--line)}
+  .dateline .w{color:var(--muted);font-size:13px;letter-spacing:.1em}
+
+  .verdict{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:30px 0 28px;margin-bottom:14px;
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .verdict .label{font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:10px}
+  .verdict .big{font-family:var(--serif);font-size:36px;line-height:1.32;letter-spacing:.04em}
+  .verdict p{font-size:13.5px;color:var(--ink-2);margin-top:12px;max-width:46ch}
+  .stamp{
+    width:92px;height:92px;border:1px solid var(--accent);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    color:var(--accent);font-family:var(--serif);font-size:13px;letter-spacing:.16em;
+    text-align:center;line-height:1.5;transform:rotate(-7deg);opacity:.85;
+  }
+
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 52px}
+  nav a{
+    font-size:12px;letter-spacing:.14em;color:var(--ink-2);text-decoration:none;
+    border:1px solid var(--line);border-radius:999px;padding:6px 15px;
+    background:var(--paper-hi);transition:.25s;
+  }
+  nav a:hover{background:var(--ink);color:var(--paper-hi);border-color:var(--ink)}
+
+  .sec{margin:0 0 26px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:30px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.06em}
+  .sec-head .n{font-size:11px;color:var(--muted);letter-spacing:.2em}
+
+  .card{
+    background:var(--paper-hi);border:1px solid var(--line-2);
+    margin-bottom:16px;position:relative;transition:border-color .3s,box-shadow .3s;
+  }
+  .card.top-lead{border-left:3px solid var(--accent)}
+  .card:hover{border-color:var(--accent-soft);box-shadow:0 10px 30px -22px rgba(80,50,30,.5)}
+  .card.open{border-color:var(--accent-soft)}
+  .card-top{
+    padding:24px 26px 20px;cursor:pointer;display:grid;
+    grid-template-columns:auto 1fr auto;gap:16px;align-items:start;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .card-top:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .idx{
+    font-family:var(--serif);font-size:12px;color:var(--accent);
+    border:1px solid var(--accent-soft);border-radius:50%;
+    width:26px;height:26px;display:flex;align-items:center;justify-content:center;margin-top:3px;
+  }
+  .card h3{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.55;letter-spacing:.015em}
+  .card h3 small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.1em;margin-top:7px}
+  .chev{width:22px;height:22px;position:relative;margin-top:5px;flex:0 0 auto;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+  .chev::before,.chev::after{content:"";position:absolute;top:50%;width:9px;height:1px;background:var(--ink-2)}
+  .chev::before{left:2px;transform:rotate(45deg)}
+  .chev::after{right:2px;transform:rotate(-45deg)}
+  .card.open .chev{transform:rotate(180deg)}
+
+  .card-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
+  .card.open .card-body{grid-template-rows:1fr}
+  .card-body > div{overflow:hidden}
+
+  dl{padding:2px 26px 0 68px;display:grid;gap:0}
+  dl > div{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:13px 0;border-top:1px solid var(--line-2)}
+  dt{font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:3px}
+  dd{font-size:14px;color:var(--ink-2);line-height:1.85}
+  dd strong{color:var(--ink);font-weight:600}
+  dd em{font-style:normal;color:var(--accent);font-weight:500}
+
+  .src{
+    margin:14px 26px 22px 68px;padding:14px 16px;
+    background:var(--paper);border-left:2px solid var(--accent-soft);
+    font-size:12.5px;color:var(--ink-2);
+  }
+  .src .t{font-size:10.5px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .links a{
+    display:inline-flex;align-items:center;gap:5px;font-size:12px;text-decoration:none;color:var(--accent);
+    border:1px solid var(--accent-soft);border-radius:3px;padding:4px 10px;background:#fff;transition:.2s;
+  }
+  .links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .links a::after{content:"↗";font-size:10px;opacity:.7}
+  .nolink{display:inline-block;font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:3px;padding:4px 10px}
+
+  .timeline{position:relative;padding-left:8px}
+  .tl{display:grid;grid-template-columns:138px 1fr;gap:22px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+  .tl:last-child{border-bottom:0}
+  .tl .d{font-family:var(--serif);font-size:19px;color:var(--accent);letter-spacing:.03em;white-space:nowrap}
+  .tl .d small{display:block;font-family:var(--sans);font-size:10.5px;color:var(--muted);letter-spacing:.14em;margin-top:3px}
+  .tl p{font-size:14px;color:var(--ink-2)}
+  .tl p b{color:var(--ink);font-weight:600}
+
+  details.excl{border-top:1px solid var(--ink);padding-top:16px;margin-top:64px}
+  details.excl summary{cursor:pointer;font-size:12px;letter-spacing:.22em;color:var(--muted);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details.excl summary::-webkit-details-marker{display:none}
+  details.excl summary::after{content:"展开";font-size:11px;letter-spacing:.1em;color:var(--accent)}
+  details.excl[open] summary::after{content:"收起"}
+  table{width:100%;border-collapse:collapse;margin-top:18px;font-size:12.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+  th{font-weight:500;font-size:10.5px;letter-spacing:.16em;color:var(--muted)}
+  td:first-child{color:var(--ink);width:44%}
+  td small{display:block;font-size:10px;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+  td a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:2}
+  footer b{color:var(--ink-2);font-weight:500}
+  @media (max-width:620px){
+    .wrap{padding:0 20px 90px}
+    h1{font-size:31px}
+    .verdict{grid-template-columns:1fr;gap:16px}
+    .stamp{width:74px;height:74px;font-size:11px;justify-self:start}
+    dl{padding-left:26px}
+    dl > div{grid-template-columns:1fr;gap:2px}
+    .src{margin-left:26px}
+    .tl{grid-template-columns:1fr;gap:4px}
+    .card-top{padding:20px 18px 16px;gap:12px}
+  }
+</style>
+</head>
+<body>
+<div style="font:12px/1.7 -apple-system,'Hiragino Sans GB',sans-serif;color:#8a8073;padding:9px 32px;border-bottom:1px solid #d9cfbe;background:#f4efe6;letter-spacing:.08em">平湖雷达 · 内部参考，请勿外传 · <a href="./archive/index.html" style="color:#9c3d2e;text-decoration:none">往期</a></div>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">
+      <b>平湖雷达</b>
+      <span>10 月 22 日 · 晨间</span>
+    </div>
+    <h1>同一天下午三份公示<br>都在说钱，<em>都没有写钱</em></h1>
+    <div class="dateline">
+      <span>2026 年 10 月 22 日</span>
+      <span class="sep">／</span>
+      <span>星期四</span>
+      <span class="sep">／</span>
+      <span class="w">风雨窗口第一天</span>
+    </div>
+  </header>
+
+  <section class="verdict">
+    <div>
+      <div class="label">判 断</div>
+      <div class="big">建议动一件事：问基金的钱。</div>
+      <p>三份公示挤在 10 月 21 日下午六个小时内发完，两份是"修订方案"，一份是"出资参与"，指向一轮基金体系调整。但金额、份额、有没有约定投回平湖，一个字都没写。反馈期只到 10 月 29 日，过了这天，程序上就只剩"已批准"。其余几条都还不到动的程度：台风本地口径没出来，两个环评项目停在公示，培训稿是别家已做。</p>
+    </div>
+    <div class="stamp">一<br>值 得 动</div>
+  </section>
+
+  <nav>
+    <a href="#act">值得动</a>
+    <a href="#watch">可以留意</a>
+    <a href="#days">接下来的日子</a>
+    <a href="#excl">今天排除了什么</a>
+  </nav>
+
+  <section id="act" class="sec">
+    <div class="sec-head">
+      <h2>今天值得动</h2>
+      <span class="n">点 开 看 细 节 与 出 处</span>
+    </div>
+
+    <article class="card top-lead" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">1</span>
+        <h3>三只基金同一天下午公示，钱从哪出、出多少、投不投本地
+          <small>两份修订 · 一次出资 · 反馈截止 10 月 29 日</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>反馈期到 <strong>10 月 29 日</strong>，只剩七天。这三份都还在"征求意见"阶段，现在问是程序内的正常询问；过了这天，金额与份额只能等年报或采访补，问的难度完全不同。</dd></div>
+          <div><dt>先问谁</dt><dd>平湖市财政局 基金管委会办公室 王昊程（公示指定的反馈人，0573-85620836）→ 金投人才集团、平湖市金投创业投资（母基金管理人）→ 市府办财经科（要基金管委会那次会议的决议口径）。</dd></div>
+          <div><dt>要问的那一句</dt><dd>鑫翼东湖在这两只嘉兴基金里各出多少钱、占多少份额、有没有约定投回平湖的比例？</dd></div>
+          <div><dt>值不值</dt><dd>拿到出资金额与份额（一个区间也算），就做"平湖母基金的钱往哪走"；<em>只有基金名称和管理人，就先放</em>——那是把公示原文重念一遍，不是新闻。</dd></div>
+          <div><dt>缺什么</dt><dd>金额、份额、反投约定、基金规模、已投项目、会议纪要、基金业协会备案。三篇同一发文单位、同一反馈人，<strong>属同源，不能互相印证</strong>。另有一处待核：三篇落款都写"2025 年 10 月 21 日"，与页面发布时间对不上，只记这一点，不下结论。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">已 读 原 文</div>
+          参与的两只嘉兴基金：AI 专项为"嘉兴市国睿智承平股权投资合伙企业（有限合伙）"，管理人嘉兴市嘉睿投资管理有限公司，注册在南湖区基金小镇，投向算力、数据、模型、终端四大板块十三条赛道；产业综合为"嘉兴市长创产综股权投资合伙企业（有限合伙）"，管理人嘉兴长投创业投资，投向"135N"集群。两只存续都不超过 10 年（投资 6 年、退出 4 年）。本地两只：明湖贰号由浙江容亿投资管理；鑫翼东湖母基金由金投人才集团及其全资子公司平湖市金投创投管理，投向里写了量子科技、可控核聚变、6G。
+          <div class="links">
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_1de6ba44d5aec0ad3bc9f4b79b1a6982.html" target="_blank" rel="noopener">出资参与两只嘉兴基金</a>
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_4704e55a8fd0fdb018cda1239f4d1691.html" target="_blank" rel="noopener">明湖贰号修订</a>
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_43ccbd42f7fa97c0c813edfbeebd95da.html" target="_blank" rel="noopener">鑫翼东湖母基金修订</a>
+          </div>
+        </div>
+      </div></div>
+    </article>
+  </section>
+
+  <section id="watch" class="sec" style="margin-top:64px">
+    <div class="sec-head">
+      <h2>可以留意</h2>
+      <span class="n">三 条 · 都 还 不 到 动 的 程 度</span>
+    </div>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">2</span>
+        <h3>风雨窗口今天开始，平湖本地的量级还是一张白纸
+          <small>嘉兴口径已报 22–24 日明显风雨 · 本地台与防指未见公开稿</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>今天是 <strong>22 到 24 日这三天里的第一天</strong>。这三天过了，"防没防"就只剩事后复盘，没有现场可看。</dd></div>
+          <div><dt>先问谁</dt><dd>平湖市气象台（本地风雨量级、影响时段）→ 市防指办（响应等级、沿海作业与在建工地停工口径）→ 市农业农村局（晚稻、大棚）。</dd></div>
+          <div><dt>要问的那一句</dt><dd>平湖 22 到 24 日的本地风雨量级和响应等级是多少？</dd></div>
+          <div><dt>值不值</dt><dd>拿到本地量级加一份部署，就做"平湖防风第一天"；<em>只有嘉兴口径就先放</em>——那是复述上级预报，不是本地新闻。</dd></div>
+          <div><dt>缺什么</dt><dd>平湖本级气象与防指的公开口径。今天做过一次检索，没有拿到新东西；这是"没检索到"，不是"没发生"，所以不写成事实。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          依据是 10 月 20 日嘉兴媒体的两篇预报与浙江天气网口径（东海南部 22–24 日 12–14 级）。原文直链未取到，须在站内检索核对。
+          <div class="links">
+            <a href="https://www.jiaxing.gov.cn/" target="_blank" rel="noopener">嘉兴市政府门户</a>
+            <a href="https://www.pinghu.gov.cn/" target="_blank" rel="noopener">平湖市政府门户</a>
+            <span class="nolink">原稿无直链</span>
+          </div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">3</span>
+        <h3>一家上海企业租下新埭厂房，投 6650 万做变压器散热片
+          <small>年产 18000 吨 · 租 12000 平方米 · 环评征求意见十日</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>环评征求意见只有 <strong>十天</strong>（自 10 月 21 日发布起）。这类项目一旦批下来就进施工，投产与用工的数字只有现在问得最全。</dd></div>
+          <div><dt>先问谁</dt><dd>新埭镇经济发展办（招商口径：用地、政策、投产计划）；企业公示联系人郑总（021-57280616，上海号段，可问为什么把产线放到平湖）。</dd></div>
+          <div><dt>要问的那一句</dt><dd>项目什么时候投产、用多少人？厂房是租的还是自建？</dd></div>
+          <div><dt>值不值</dt><dd>拿到投产时间与用工人数，就做"上海的产线为什么搬到新埭"；<em>只有投资额就先放</em>——6650 万在环评公示里只是申报数，不等于到账。</dd></div>
+          <div><dt>缺什么</dt><dd>原文自相矛盾：建设内容写"租赁创强路彩创包装 A 栋 1-2 层"，结论段又写"位于创强路 88 号"。以哪个为准，要问。另缺投资进度、设备来源、客户。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          项目名称"年产 18000 吨电力及新能源变压器散热片建设项目"，性质为新建，投资 6650 万元，租赁标准厂房 12000 平方米，配机加工、灌漆、淋漆、前处理线。建设单位浙江域创电力设备有限公司，环评单位为杭州嘉绿科技咨询。
+          <div class="links">
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_123266e4a2d74b5ca1d30e573f08c63e.html" target="_blank" rel="noopener">项目环评公示原文</a>
+          </div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card" data-card>
+      <div class="card-top" role="button" tabindex="0" aria-expanded="false">
+        <span class="idx">4</span>
+        <h3>"零基础免费学"，谁出钱、学完有没有上岗
+          <small>本地媒体今日稿 · 标题即未核 · 缺人数与就业率</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>培训是分批开的，<strong>正在上课的这批人</strong>还能拍到、访到；等结业只剩一张合影。</dd></div>
+          <div><dt>先问谁</dt><dd>市人力社保局职业能力建设科（补贴性培训的项目目录、补贴标准、开班数）→ 承办机构（学员来源、结业去向）。</dd></div>
+          <div><dt>要问的那一句</dt><dd>今年补贴性培训开了多少班、多少人结业、结业后三个月内就业的比例是多少？</dd></div>
+          <div><dt>值不值</dt><dd>拿到开班数与就业率，就做"免费培训能不能换来上岗"；<em>只有课堂画面就先放</em>——这是别家已经做完的宣传稿。</dd></div>
+          <div><dt>缺什么</dt><dd>人数、班次、补贴金额、就业去向，一样都没有。标题里的"精准上岗"是媒体措辞，不能当结论。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">来 源 与 缺 口</div>
+          本地媒体 10 月 22 日稿《零基础免费学，平湖定制化培训帮年轻人"精准上岗"》，抓取只回标题与日期，未回正文。可去潮新闻站内检索核对。
+          <div class="links">
+            <a href="https://tidenews.com.cn/search.html?keyword=%E5%B9%B3%E6%B9%96" target="_blank" rel="noopener">潮新闻搜「平湖」</a>
+            <span class="nolink">原稿无直链</span>
+          </div>
+        </div>
+      </div></div>
+    </article>
+  </section>
+
+  <section id="days" style="margin-top:64px">
+    <div class="sec-head">
+      <h2>接下来的日子</h2>
+      <span class="n">五 个 日 期</span>
+    </div>
+    <div class="timeline">
+      <div class="tl">
+        <div class="d">10.23 – 10.25<small>三天</small></div>
+        <p><b>第三届平湖机床展</b>（明湖博览汇）。启幕之后第一个能核客流、参展结构与成交的窗口，明天开幕。</p>
+      </div>
+      <div class="tl">
+        <div class="d">10.24<small>星期五</small></div>
+        <p>公积金提取新政执行满半月，可以问<b>实际办理量与被拒原因</b>，别等出争议再问。</p>
+      </div>
+      <div class="tl">
+        <div class="d">10.29<small>还有 7 天</small></div>
+        <p><b>三只基金公示截止。</b>这天之后程序上只剩"已批准"，金额与份额要另找口子。</p>
+      </div>
+      <div class="tl">
+        <div class="d">10.31 前后<small>十天意见期</small></div>
+        <p>域创项目环评征求意见期满，<b>之后进入审批</b>，投产与用工问题会更难问到。</p>
+      </div>
+      <div class="tl">
+        <div class="d">12.20<small>还有 59 天</small></div>
+        <p><b>体育中心改造</b>计划完工。合同、开工令、施工期场馆怎么开放，至今没有一份公开。</p>
+      </div>
+    </div>
+  </section>
+
+  <details class="excl" id="excl">
+    <summary>今天排除了什么（8 条）</summary>
+    <table>
+      <thead><tr><th>条目</th><th>为什么不算线索</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_ca7b40e8fb6649cba91209ad207047b5.html" target="_blank" rel="noopener">从严从细从实织密防范体系（代市长督导独山港石化产业园）</a><small>10-21 08:50 · 已读全文</small></td>
+          <td>调研督导属通稿，没定钱、没定人、没定期限。但两个点位值得去：危化品车辆停车场（预约—审批—叫号—场地—巡查全链条）和园区应急指挥中心。当作现场，不当线索。</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_43f3c9673d6d42c4b7f9177d2ea90095.html" target="_blank" rel="noopener">新仓镇工业园区详细规划环评公示</a><small>10-21 14:48</small></td>
+          <td>维持昨天的判断：园区规划环评单条属程序，新仓近期没有第二个项目形成产业信号。规划期到 2035 年、定位"工业＋居住"的产业社区，先记着。</td>
+        </tr>
+        <tr><td>果品、水产产业技术推广服务团队拟拨付资金（第二批）公示</td><td>常规资金公示，金额与名单在附件，未读。要问也只值一条电话。</td></tr>
+        <tr><td>掀起"时尚平湖"新浪潮</td><td>标题是方向性表述，常见于部署类通稿；正文未读，未见具体数字、期限或责任人，故不进候选。同期"78 家企业出征广交会"昨天已判过，只有家数没有成交额。</td></tr>
+        <tr><td>持续放大"一田多收"叠加效应 / 新埭夯实"耕"基稳粮仓</td><td>仅标题，农业条线；未读正文，未见争议点与数据出处，不进候选。</td></tr>
+        <tr><td>家门口有能人 烦心事有解法</td><td>基层调解人物稿，无制度变化。</td></tr>
+        <tr><td>退役军人"听老兵故事"、平湖短剧、青铜钱币修复进校园</td><td>活动与人物软稿，不进采写队列。</td></tr>
+        <tr><td>小红书"南港小鲜蟹绳"避雷贴（10-17）</td><td>帖子里的"已违法"是发帖人判断。可核的只有市场监管的计量与捆扎口径，且是单条消费投诉。</td></tr>
+      </tbody>
+    </table>
+  </details>
+
+  <footer>
+    <b>这一页怎么读：</b>每张卡点开有四项——为什么现在、先问谁、要问的那一句、值不值，另加缺什么；带 ↗ 的按钮直接跳原文，没有直链的写"原稿无直链"。<br>
+    <b>证据口径：</b>凡标"未核"即为尚未取得原件；社交帖子只作找人与找现场的线索，标题不作事实。三份基金公示同源，不能互相印证。<br>
+    <b>今日空白：</b>执法处罚、生态两类没有数据；台风与疫情防控类本地口径没有稳定入口。<br>
+    生成本页 2026-10-22 07:48 ｜ 外部支出 0
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('[data-card]').forEach(function(card){
+    var top = card.querySelector('.card-top');
+    function toggle(){
+      var open = card.classList.toggle('open');
+      top.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    top.addEventListener('click', toggle);
+    top.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+</script>
+</body>
+</html>

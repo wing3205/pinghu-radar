@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平湖雷达 · 2026-11-02｜文件漏掉的那个数</title>
+<style>
+  :root{
+    --paper:#f6f3ec; --ink:#1e1c19; --ink-2:#4a453c; --ink-3:#7d766a;
+    --rule:#d8d2c4; --accent:#b3462f; --card:#fbf9f4;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink)}
+  body{
+    font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+    line-height:1.75; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 26px 96px}
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:18px;margin-bottom:34px}
+  .kicker{font-size:12px;letter-spacing:.22em;color:var(--ink-3)}
+  .masthead h1{font-size:29px;line-height:1.4;margin:14px 0 10px;font-weight:600;letter-spacing:-.01em}
+  .masthead .date{font-size:13px;color:var(--ink-3);letter-spacing:.06em}
+  .lede{font-size:19px;line-height:1.85;color:var(--ink-2);margin:24px 0 12px}
+  .lede em{font-style:normal;color:var(--accent)}
+  .lede-sub{font-size:15.5px;color:var(--ink-3);margin:0 0 40px}
+  h2.sec{font-size:12px;letter-spacing:.24em;color:var(--ink-3);font-weight:600;
+    margin:54px 0 20px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  details.card{background:var(--card);border:1px solid var(--rule);margin:0 0 20px;transition:border-color .2s}
+  details.card:hover{border-color:#bdb5a3}
+  details.card[open]{border-color:#c9bda4}
+  summary{list-style:none;cursor:pointer;padding:26px 26px 22px;position:relative}
+  summary::-webkit-details-marker{display:none}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.16em;color:var(--accent);
+    border:1px solid var(--accent);padding:2px 8px;margin-bottom:14px}
+  .tag.mute{color:var(--ink-3);border-color:var(--rule)}
+  summary h3{font-size:22px;line-height:1.5;margin:0 0 12px;font-weight:600;letter-spacing:-.005em}
+  .core{font-size:15.5px;color:var(--ink-2);margin:0;line-height:1.8}
+  .hint{position:absolute;right:26px;bottom:22px;font-size:11px;letter-spacing:.14em;color:var(--ink-3)}
+  details[open] .hint{color:var(--accent)}
+  .body{padding:2px 26px 28px;border-top:1px solid var(--rule);margin-top:6px}
+  .facts{margin:18px 0 0;padding:0;list-style:none}
+  .facts li{display:flex;gap:14px;padding:7px 0;border-bottom:1px dotted #e2dbcb;font-size:15px}
+  .facts li:last-child{border-bottom:none}
+  .facts .k{flex:0 0 96px;color:var(--ink-3);font-size:13px;letter-spacing:.04em;padding-top:3px}
+  .facts .v{flex:1}
+  .num{font-variant-numeric:tabular-nums;font-weight:600}
+  .block{margin:22px 0 0}
+  .block .lbl{font-size:11px;letter-spacing:.2em;color:var(--accent);margin-bottom:6px}
+  .block p{margin:0;font-size:15.5px;line-height:1.8;color:var(--ink-2)}
+  .ask{background:#f1ece0;border-left:2px solid var(--accent);padding:15px 18px;margin:8px 0 0}
+  .ask p{margin:0;font-size:16px;color:var(--ink)}
+  ul.who{margin:6px 0 0;padding-left:0;list-style:none;font-size:15px;color:var(--ink-2)}
+  ul.who li{padding:3px 0}
+  ul.who li::before{content:"—";color:var(--ink-3);margin-right:8px}
+  .links{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+  .links a{display:inline-block;font-size:13.5px;text-decoration:none;color:var(--ink);
+    border:1px solid var(--ink);padding:7px 14px;letter-spacing:.03em;transition:.18s}
+  .links a:hover{background:var(--ink);color:var(--paper)}
+  .links a.accent{border-color:var(--accent);color:var(--accent)}
+  .links a.accent:hover{background:var(--accent);color:#fff}
+  .gap{font-size:14px;color:var(--ink-3);margin-top:14px;line-height:1.75}
+  .person{background:var(--card);border:1px solid var(--rule);padding:22px 24px;margin:0 0 16px}
+  .person h4{margin:0 0 8px;font-size:17px;font-weight:600}
+  .person p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.8}
+  .note{font-size:15px;color:var(--ink-2);line-height:1.85;margin:0 0 12px}
+  .note strong{font-weight:600;color:var(--ink)}
+  ul.excl{margin:6px 0 0;padding-left:18px;font-size:15px;color:var(--ink-2);line-height:1.9}
+  ul.excl li{margin-bottom:8px}
+  ol.tl{list-style:none;margin:6px 0 0;padding:0}
+  ol.tl li{display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+  ol.tl .d{flex:0 0 92px;color:var(--accent);font-variant-numeric:tabular-nums;font-size:14px;padding-top:4px}
+  footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--ink);
+    font-size:12px;letter-spacing:.16em;color:var(--ink-3);display:flex;justify-content:space-between}
+  @media (max-width:560px){
+    .wrap{padding:40px 18px 72px}
+    .masthead h1{font-size:23px}
+    .lede{font-size:17px}
+    summary{padding:20px 18px 18px}
+    summary h3{font-size:19px}
+    .body{padding:2px 18px 22px}
+    .facts .k{flex:0 0 72px}
+    .hint{right:18px;bottom:18px}
+  }
+</style>
+</head>
+<body>
+<div style="font:12px/1.7 -apple-system,'Hiragino Sans GB',sans-serif;color:#8a8073;padding:9px 32px;border-bottom:1px solid #d9cfbe;background:#f4efe6;letter-spacing:.08em">平湖雷达 · 内部参考，请勿外传 · <a href="./archive/index.html" style="color:#9c3d2e;text-decoration:none">往期</a></div>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="kicker">平湖雷达 · 内部参考 · 请勿外传</div>
+    <h1>三份文件，都漏了同一个东西：那个能打的数</h1>
+    <div class="date">2026 年 11 月 2 日 · 周一 · 晨报</div>
+  </div>
+
+  <p class="lede">
+    今天窗口里 14 条，通稿 6 条，值得动 3 条。这 3 条的共同点不是"政府发了个文"，而是
+    <em>文件自己留了个缺口</em>：补贴名单不提营运车、收回公告不说原因、验收通稿没有水价。
+  </p>
+  <p class="lede-sub">缺口就是问题。今天的电话，问的都是那个没写出来的数字。</p>
+
+  <h2 class="sec">值得动</h2>
+
+  <details class="card" open>
+    <summary>
+      <span class="tag">建议动 · 事件＋反差</span>
+      <h3>补的是"非营运"，禁的是"全部"</h3>
+      <p class="core">同一个上午，生态环境分局间隔 11 分钟贴出两份国四柴油货车文件：一份要限行，一份在发淘汰补贴。补贴名单标题限定"非营运"，18 辆车、56.5 万元；名单里跑运输的物流企业只有 1 家。</p>
+      <span class="hint">展开看原文数字</span>
+    </summary>
+    <div class="body">
+      <ul class="facts">
+        <li><span class="k">两份文件</span><span class="v">10:36 限行通告社会风险征询；10:47 第一批淘汰更新补助名单公示</span></li>
+        <li><span class="k">补助规模</span><span class="v"><span class="num">17</span> 辆淘汰 ＋ <span class="num">1</span> 辆更新，合计 <span class="num">56.5 万元</span>；逐条相加与总数一致，单车四档：<span class="num">1.8</span>／<span class="num">2.5</span>／<span class="num">3.5</span>／<span class="num">4.5 万</span></span></li>
+        <li><span class="k">名单结构</span><span class="v">个人与个体工商户 3 辆、废旧物资回收 3 辆、商行与副食品经营部 4 辆、厂 3 辆、模具 1 辆、搬家队 1 辆、<strong>物流企业 1 辆</strong>（平湖韵源物流）</span></li>
+        <li><span class="k">公示期</span><span class="v">11 月 2 日至 11 月 6 日（5 个工作日），异议电话 <span class="num">0573-85631513</span>，胜利路 380 号 2 号楼 208 办公室</span></li>
+        <li><span class="k">限行文件</span><span class="v">决策主体平湖市人民政府，委托嘉兴海耘风险评估有限公司评估，<span class="num">7</span> 个工作日内反馈，联系人韩工 <span class="num">0573-86868589</span></span></li>
+        <li><span class="k">缺的那一块</span><span class="v">限行范围只有一张"红线包围区域"示意图，正文没有道路清单</span></li>
+      </ul>
+
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>两份文件同日出手；限行还在风险征询期，意见能改方案；补助只走完首批 18 辆，第二批未出。窗口就是这一周。</p>
+      </div>
+
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <ul class="who">
+          <li>生态环境分局 208 办公室（0573-85631513）：补助口径、车辆保有量</li>
+          <li>海耘评估 韩工（0573-86868589）：限行边界、风险评估结论</li>
+          <li>市交通运输局 货运科：营运货车是否被排除在补助外</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="lbl">要问的那一句</div>
+        <div class="ask"><p>全市国四中重型柴油货车保有量多少辆、其中营运货车多少辆？首批补助为什么只有 18 辆、名单里物流企业只有 1 家——营运货车是不是不在补助范围内？</p></div>
+      </div>
+
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到保有量与营运／非营运拆分，就是一条"跑运输的拿不到补贴、却最先被限行"的稿子，有名单、有金额、有政策文本。只有这 18 辆名单，就只是一条公示消息，先放。</p>
+      </div>
+
+      <div class="gap">缺什么：限行区域的文字边界；国四货车保有量（无公开数）；年度补助资金总盘子。</div>
+
+      <div class="links">
+        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_b7cb28e5704c83b07855dcb607cbdec6.html" target="_blank" rel="noopener">补助名单原文</a>
+        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_258e53666ef6589ec2cb247cdfc4365b.html" target="_blank" rel="noopener">限行征询原文</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <span class="tag">建议动 · 反差＋数据</span>
+      <h3>试点验收了，唯独没说水价</h3>
+      <p class="core">10 月 29 日，平湖"农业水价综合改革、现代化灌区建设"国家级试点通过验收，全省唯一入选本批的县市。通稿给了 12 个数字：管道灌溉全覆盖、渠系 5171 公里、年均节水 730 万立方米——但改革名字里的那个词，"水价"，一次都没出现。</p>
+      <span class="hint">展开看原文数字</span>
+    </summary>
+    <div class="body">
+      <ul class="facts">
+        <li><span class="k">验收</span><span class="v">10 月 29 日验收会，实地核查、听取汇报、质询评议，专家组认定任务全面完成、成效明显，同意通过</span></li>
+        <li><span class="k">身份</span><span class="v">2024 年入选水利部第二批试点，<strong>浙江省唯一</strong>入选本批的县（市、区）；稿件来源为市水利局</span></li>
+        <li><span class="k">灌溉</span><span class="v">全市 100% 实现管道灌溉（<span class="num">100%</span> 为原文口径）；"明排暗灌"渠系 <span class="num">5171 公里</span>；灌溉水有效利用系数 <span class="num">0.675</span></span></li>
+        <li><span class="k">管护</span><span class="v"><span class="num">79</span> 个涉农行政村水利服务合作社全域覆盖；"合作社＋保险＋物业"管护模式覆盖 <span class="num">90% 以上</span>；工程完好率 <span class="num">90%→100%</span></span></li>
+        <li><span class="k">节水</span><span class="v">年均节水 <span class="num">730 万立方米</span>；<span class="num">1463</span> 座泵站用水计量全覆盖；<span class="num">60 余</span>个灌区实时在线量水</span></li>
+        <li><span class="k">水质</span><span class="v">稻田退水"零直排"灌区约 <span class="num">12 万亩</span>；面源污染负荷削减 <span class="num">30% 以上</span>；<span class="num">17</span> 条市级河道稳定达Ⅲ类</span></li>
+        <li><span class="k">缺的那个数</span><span class="v">农业用水价格（元／立方米）、农民亩均水费、奖补标准——全篇未出现</span></li>
+      </ul>
+
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>验收刚过，成果转化的制度安排正在定；"全省唯一"意味着各地要来学，价格是最容易被问倒的一环。</p>
+      </div>
+
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <ul class="who">
+          <li>市水利局 · 农村水利（水保）科：水价核定与计量口径</li>
+          <li>市农业农村局：亩均水费、奖补到户</li>
+          <li>任一农民用水合作社（79 个全覆盖，取一个即可）</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="lbl">要问的那一句</div>
+        <div class="ask"><p>平湖农业用水价格现在是多少元／立方米？改革前后农民每亩水费分别是多少？年均节水 730 万立方米，按什么水价折算成钱、这笔钱归谁？</p></div>
+      </div>
+
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到水价与亩均水费，就是"验收合格的改革，农民到底省没省钱"——12 个数字已经搭好骨架，只差价格这一个变量。拿不到水价，这条只能写成验收消息，先放。</p>
+      </div>
+
+      <div class="gap">缺什么：农业用水价格核定或调整文件；奖补发放记录；验收组名单与评分表。</div>
+
+      <div class="links">
+        <a href="https://www.pinghu.gov.cn/col/col1528161/art/2026/art_ac53abfce7594446816143b75eaf3cc9.html" target="_blank" rel="noopener">验收通稿原文</a>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <span class="tag">建议动 · 数据＋节点</span>
+      <h3>一宗 1892 平方米的地被收回，文号已排到今年第 9 号</h3>
+      <p class="core">林埭镇徐家埭村 20 组的广南食品厂，1892 平方米国有建设用地被公告收回，异议期 30 天。文件号是"平自然资收〔2026〕9 号"——按文号，今年至少已收回 9 宗。</p>
+      <span class="hint">展开看原文数字</span>
+    </summary>
+    <div class="body">
+      <ul class="facts">
+        <li><span class="k">地块</span><span class="v">平湖市林埭镇徐家埭村 20 组，原土地使用者为平湖市林埭镇广南食品厂</span></li>
+        <li><span class="k">面积</span><span class="v"><span class="num">1892</span> 平方米（约 <span class="num">2.84</span> 亩），原用地面积与收回面积相同</span></li>
+        <li><span class="k">权属</span><span class="v">平湖国用（2001）字第 15-37 号，权利性质"国有"</span></li>
+        <li><span class="k">依据</span><span class="v">《土地管理法》《浙江省土地节约集约利用办法》</span></li>
+        <li><span class="k">异议期</span><span class="v">公告之日起 <span class="num">30</span> 日，即到 <span class="num">12 月 2 日</span>；书面反馈至自然资源和规划局，电话 <span class="num">0573-85825589</span></span></li>
+        <li><span class="k">落款科室</span><span class="v">自然资源所有者权益和开发利用科</span></li>
+      </ul>
+
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>异议期到 12 月 2 日。食品厂是否还在生产、有没有补偿、地块收回后给谁，现在问得到；过了公示期只能查档案。</p>
+      </div>
+
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <ul class="who">
+          <li>自然资源和规划局 · 自然资源所有者权益和开发利用科（0573-85825589）</li>
+          <li>林埭镇 经济发展办：企业现状、是否仍在生产</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="lbl">要问的那一句</div>
+        <div class="ask"><p>今年以"平自然资收"文号收回的土地一共几宗、合计多少平方米？其中因闲置收回的几宗？广南食品厂这宗属于闲置处置还是规划调整，补偿怎么算？</p></div>
+      </div>
+
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到 9 宗清单（位置、面积、原因），就是一条"平湖今年收回多少存量地、都给了谁"的数据稿。只有这一宗，就是一条百字消息，可放。</p>
+      </div>
+
+      <div class="gap">缺什么：今年收回土地的完整清单；该地块后续用途（出让／划拨／公益）。</div>
+
+      <div class="links">
+        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_f130c6ee9c75d5fd4710856fc6f4c48e.html" target="_blank" rel="noopener">收回公告原文</a>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="sec">人物与现场</h2>
+  <div class="person">
+    <h4>11 岁小男生，破了省里的纪录</h4>
+    <p>今天唯一一条带具体的人的线索。标题层信息，无直链，<strong>未核</strong>。第一步不是写稿，是找出处：哪所学校、什么赛事、什么项目、成绩多少。问：市教育局基础教育科、市体育局竞技体育科、学校教务处。<br>拿到姓名与成绩单可当天成稿；只有标题就不写。</p>
+  </div>
+
+  <h2 class="sec">留意，不进稿</h2>
+  <p class="note"><strong>南港小鲜·避雷贴</strong>（小红书 10 月 17 日，未核）：贴文自称"蟹绳巨大、已违法"。这是主张不是事实，要跟得先看现场、再查市监处置记录。缺本地官方反应这一步，只记留意。</p>
+  <p class="note"><strong>热榜三条</strong>：邮轮停航"海上养老梦碎"、独居失能老人养老钱被保姆侵吞（已有判决报道）。与本地养老议题相邻，但没有平湖落点、没有本地反应、没有增量——三步法一条都不过，不借。</p>
+  <p class="note"><strong>另外两条媒体稿</strong>：「每小时 1.7 万单，平湖这台机器真管用」需问清是哪台设备、哪个场地、1.7 万单是峰值还是日均；「平湖的天花板不在日资，在服务业」是专栏观点，可作参照，不作事实。</p>
+
+  <h2 class="sec">今天排除了什么</h2>
+  <ul class="excl">
+    <li><strong>六条会议、评论、活动通稿</strong>——全市领导干部会议、「坚定信心乘势而上」、「决战四季度 决胜全年红」、「跨越山海赴科创之约」、「政企双向奔赴」、「文体娱样样有」：没有金额、没有期限、没有人因此被改变。</li>
+    <li><strong>卫生监督国家双随机检查结果（第六期）</strong>——例行公示，单期无对比；要做需前五期累计，今天不做。</li>
+    <li><strong>国有企业招聘拟录用人员公示（二）</strong>——5 个工作日例行公示，无异常词。</li>
+    <li><strong>粮油市场价格（第 43 期）</strong>——晚粳米批发 3.96 元／公斤、零售 4.06 元／公斤，与上周持平；连续 43 期才有曲线价值。</li>
+    <li><strong>收回公告标题里的"等 1 宗"</strong>——附表只有 1 宗，"等"是模板残留，不当多宗理解。</li>
+  </ul>
+
+  <h2 class="sec">接下来的日子</h2>
+  <ol class="tl">
+    <li><span class="d">11 月 6 日</span><span>货车第一批补助公示期满，第二批节奏与异议可见</span></li>
+    <li><span class="d">11 月 8 日</span><span>公积金新政执行满月，看办理量与细则落地</span></li>
+    <li><span class="d">11 月 11 日</span><span>限行通告 7 个工作日的意见征询届满，方案是否调整</span></li>
+    <li><span class="d">11 月 30 日</span><span>林埭智创园一期进场、二期开标</span></li>
+    <li><span class="d">12 月 2 日</span><span>广南食品厂地块 30 日异议期届满</span></li>
+    <li><span class="d">12 月 20 日</span><span>体育中心改造承诺完工日</span></li>
+  </ol>
+
+  <footer>
+    <span>内部参考 · 请勿外传</span>
+    <span>2026-11-02</span>
+  </footer>
+
+</div>
+</body>
+</html>

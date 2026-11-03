@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>平湖雷达 · 2026年10月26日</title>
+<style>
+  :root{
+    --paper:#f4efe6;
+    --paper-hi:#fbf8f2;
+    --ink:#191612;
+    --ink-2:#4a433a;
+    --muted:#8a8073;
+    --line:#d9cfbe;
+    --line-2:#e8e0d2;
+    --accent:#9c3d2e;
+    --accent-soft:#c98b7d;
+    --serif:"LXGW WenKai","霞鹜文楷","Songti SC","STSong",Georgia,serif;
+    --sans:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:radial-gradient(circle at 22% 18%,rgba(255,255,255,.55),transparent 45%),
+                     radial-gradient(circle at 78% 82%,rgba(255,250,240,.5),transparent 50%);
+    mix-blend-mode:soft-light}
+  .wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 32px 120px}
+
+  header{padding:56px 0 0}
+  .kicker{display:flex;align-items:baseline;justify-content:space-between;font-size:11px;letter-spacing:.32em;color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:10px}
+  .kicker b{font-weight:600;color:var(--ink);letter-spacing:.42em}
+  h1{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.28;letter-spacing:.02em;margin:26px 0 6px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .dateline{font-family:var(--serif);font-size:15px;color:var(--ink-2);display:flex;gap:14px;align-items:center;margin-bottom:34px;flex-wrap:wrap}
+  .dateline span.sep{color:var(--line)}
+  .dateline .w{color:var(--muted);font-size:13px;letter-spacing:.1em}
+
+  .verdict{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0 28px;margin-bottom:14px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .verdict .label{font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:10px}
+  .verdict .big{font-family:var(--serif);font-size:34px;line-height:1.34;letter-spacing:.03em}
+  .verdict p{font-size:13.5px;color:var(--ink-2);margin-top:12px;max-width:48ch}
+  .stamp{width:92px;height:92px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--accent);font-family:var(--serif);font-size:13px;letter-spacing:.16em;text-align:center;line-height:1.5;transform:rotate(-7deg);opacity:.85}
+
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 52px}
+  nav a{font-size:12px;letter-spacing:.14em;color:var(--ink-2);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 15px;background:var(--paper-hi);transition:.25s}
+  nav a:hover{background:var(--ink);color:var(--paper-hi);border-color:var(--ink)}
+
+  .sec{margin:0 0 26px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:30px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.06em}
+  .sec-head .n{font-size:11px;color:var(--muted);letter-spacing:.2em}
+
+  .card{background:var(--paper-hi);border:1px solid var(--line-2);margin-bottom:16px;position:relative;transition:border-color .3s,box-shadow .3s}
+  .card.top-lead{border-left:3px solid var(--accent)}
+  .card:hover{border-color:var(--accent-soft);box-shadow:0 10px 30px -22px rgba(80,50,30,.5)}
+  .card.open{border-color:var(--accent-soft)}
+  .card-top{padding:24px 26px 20px;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;-webkit-tap-highlight-color:transparent}
+  .card-top:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .tag{font-family:var(--serif);font-size:11px;color:var(--accent);border:1px solid var(--accent-soft);padding:3px 7px;margin-top:4px;letter-spacing:.12em;white-space:nowrap}
+  .card h3{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.55;letter-spacing:.015em}
+  .card h3 small{display:block;font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.1em;margin-top:7px}
+  .chev{width:22px;height:22px;position:relative;margin-top:5px;flex:0 0 auto;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+  .chev::before,.chev::after{content:"";position:absolute;top:50%;width:9px;height:1px;background:var(--ink-2)}
+  .chev::before{left:2px;transform:rotate(45deg)}
+  .chev::after{right:2px;transform:rotate(-45deg)}
+  .card.open .chev{transform:rotate(180deg)}
+
+  .card-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
+  .card.open .card-body{grid-template-rows:1fr}
+  .card-body > div{overflow:hidden}
+
+  dl{padding:2px 26px 0 60px;display:grid;gap:0}
+  dl > div{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:13px 0;border-top:1px solid var(--line-2)}
+  dt{font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:3px}
+  dd{font-size:14px;color:var(--ink-2);line-height:1.85}
+  dd strong{color:var(--ink);font-weight:600}
+  dd em{font-style:normal;color:var(--accent);font-weight:500}
+
+  .src{margin:14px 26px 22px 60px;padding:14px 16px;background:var(--paper);border-left:2px solid var(--accent-soft);font-size:12.5px;color:var(--ink-2)}
+  .src .t{font-size:10.5px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .links a{display:inline-flex;align-items:center;gap:5px;font-size:12px;text-decoration:none;color:var(--accent);border:1px solid var(--accent-soft);border-radius:3px;padding:4px 10px;background:#fff;transition:.2s}
+  .links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .nodirect{font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.06em}
+
+  .timeline{border-left:1px solid var(--line);margin-left:6px;padding-left:26px}
+  .tl{position:relative;padding:0 0 26px}
+  .tl::before{content:"";position:absolute;left:-32px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .tl .d{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:.1em}
+  .tl .t{font-size:14px;color:var(--ink-2);margin-top:3px}
+
+  .excl{font-size:13.5px;color:var(--ink-2)}
+  .excl li{list-style:none;padding:14px 0;border-top:1px solid var(--line-2);display:grid;grid-template-columns:1fr;gap:4px}
+  .excl b{font-weight:600;color:var(--ink)}
+  .excl em{font-style:normal;color:var(--muted);font-size:12.5px}
+
+  footer{margin-top:64px;border-top:1px solid var(--ink);padding-top:18px;font-size:11px;letter-spacing:.22em;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:560px){
+    .wrap{padding:0 20px 90px}
+    h1{font-size:32px}
+    .verdict{grid-template-columns:1fr}
+    .stamp{display:none}
+    dl{padding-left:26px}
+    .src{margin-left:26px}
+    .card-top{grid-template-columns:1fr auto;gap:10px}
+    .tag{grid-column:1/-1;justify-self:start;margin:0 0 4px}
+  }
+</style>
+</head>
+<body>
+<div style="font:12px/1.7 -apple-system,'Hiragino Sans GB',sans-serif;color:#8a8073;padding:9px 32px;border-bottom:1px solid #d9cfbe;background:#f4efe6;letter-spacing:.08em">平湖雷达 · 内部参考，请勿外传 · <a href="./archive/index.html" style="color:#9c3d2e;text-decoration:none">往期</a></div>
+<div class="wrap">
+
+<header>
+  <div class="kicker"><b>平湖雷达</b><span>2026 · 午后更新</span></div>
+  <h1>一场雨下完了，<br><em>数字还没出来</em></h1>
+  <div class="dateline">
+    <span>2026 年 10 月 26 日 · 星期一</span>
+    <span class="sep">/</span>
+    <span class="w">窗口：10 月 25 日至今</span>
+  </div>
+</header>
+
+<div class="verdict">
+  <div>
+    <div class="label">今天的判断</div>
+    <div class="big">建议动，但只动一件事</div>
+    <p>台风“蔷琵”的雨量统计窗口今早 08:00 关闭，平湖本级还没有出实况数字。午后 13:52 又挂出一笔省工信专项资金的公示——这是今天唯一带钱的动作，但金额在附件里，附件下载被站点直接挡回 403。</p>
+  </div>
+  <div class="stamp">内部参考<br>请勿外传</div>
+</div>
+
+<nav>
+  <a href="#act">值得动</a>
+  <a href="#call">三个电话</a>
+  <a href="#watch">留意</a>
+  <a href="#social">社交与热榜</a>
+  <a href="#days">接下来的日子</a>
+  <a href="#out">排除了什么</a>
+</nav>
+
+<!-- 一 -->
+<section class="sec" id="act">
+  <div class="sec-head"><h2>今天值得动</h2><span class="n">一条</span></div>
+
+  <article class="card top-lead open">
+    <div class="card-top" tabindex="0" role="button" aria-expanded="true">
+      <span class="tag">现场</span>
+      <h3>雨下完了，平湖没报数
+        <small>10 月 22 日预报 50～80 毫米，局部 80～120 毫米；到今早 08:00 窗口关闭，未见实况</small>
+      </h3>
+      <span class="chev"></span>
+    </div>
+    <div class="card-body"><div>
+      <dl>
+        <div><dt>为什么现在</dt><dd>影响期定在 <strong>23 日 08 时到 26 日 08 时</strong>，降雨集中在 23 日夜到 24 日。窗口今天早上刚关，实况数字此刻最全；再等就进周报口径，细节被磨平。</dd></div>
+        <div><dt>先问谁</dt><dd>市应急管理局 <strong>防汛防台科</strong>（市防指办）；面雨量与水位站点找市水利局 <strong>水旱灾害防御科</strong>。</dd></div>
+        <div><dt>要问的那句</dt><dd>“23 日 08 时到 26 日 08 时，全市面雨量多少毫米、最大站点在哪个镇、有没有积水点和转移人员？”</dd></div>
+        <div><dt>值不值</dt><dd>拿到面雨量、积水点、转移人数，就做<em>「这场雨平湖接住了吗」</em>——正好接上 23 日刚公示的排水管网二期，回答“今年还会不会淹”。只有一句“总体平稳”，就先放。</dd></div>
+        <div><dt>缺什么</dt><dd>实况雨量、积水点清单、圩区与农业影响。预警口径来自平湖发布（经门户转载），<strong>官网原文未取</strong>；省防指 10 月 22 日 08 时起防台风Ⅳ级响应可核。</dd></div>
+      </dl>
+      <div class="src">
+        <div class="t">原文 · 平湖发布（转载页）</div>
+        超强台风“蔷琵”逼近！暴雨和大风要来了！平湖市发布重要提示
+        <div class="links"><a href="https://finance.sina.com.cn/wm/2026-10-22/doc-iniwamir5888095.shtml" target="_blank" rel="noopener">打开原文 ↗</a></div>
+      </div>
+    </div></div>
+  </article>
+</section>
+
+<!-- 二 -->
+<section class="sec" id="call">
+  <div class="sec-head"><h2>今天先打这几个电话</h2><span class="n">两条</span></div>
+
+
+
+  <article class="card">
+    <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+      <span class="tag">数据</span>
+      <h3>林埭智创园：二期在招标，一期早已定标
+        <small>一期中标价 8318.16 万元；二期总承包招标文件 10 月 21 日公示</small>
+      </h3>
+      <span class="chev"></span>
+    </div>
+    <div class="card-body"><div>
+      <dl>
+        <div><dt>为什么现在</dt><dd>二期（年产 3000 吨汽车管路系统关键零部件）总承包招标文件 <strong>10 月 21 日</strong>刚公示，开标在即；一期 9 月已定标却仍无开工令，两个节点正好一起问。</dd></div>
+        <div><dt>先问谁</dt><dd>林埭镇 <strong>经济发展办</strong>；项目业主是镇属平台<strong>嘉兴市龙智产业发展有限公司</strong>，招标代理嘉兴市弘茂工程咨询。</dd></div>
+        <div><dt>要问的那句</dt><dd>“二期总承包哪天开标？一期中标单位进场了没有，合同工期多少天？”</dd></div>
+        <div><dt>值不值</dt><dd>拿到二期开标日加一期开工令，就做<em>「8 万件精密部件的产能什么时候落地」</em>；只有招标公告标题，就先放。</dd></div>
+        <div><dt>缺什么</dt><dd>一期合同工期、开工令、现场进度。上述中标价与招标节点均来自<strong>第三方聚合层，官方原文未核</strong>；交易栏目最新一条仍停在 10 月 16 日，不含这两项。</dd></div>
+      </dl>
+      <div class="src">
+        <div class="t">原文 · 聚合层（仅作线索，须回官方核）</div>
+        平湖市林埭精密智创园项目（一期）中标候选人公示
+        <div class="links"><a href="https://bidinfo.datacubr.com/index.php/2026/09/02/%E5%B9%B3%E6%B9%96%E5%B8%82%E6%9E%97%E5%9F%AD%E7%B2%BE%E5%AF%86%E6%99%BA%E5%88%9B%E5%9B%AD%E9%A1%B9%E7%9B%AE%E4%B8%80%E6%9C%9F%E5%B9%B4%E4%BA%A78%E4%B8%87%E4%BB%B6%E7%B2%BE%E5%AF%86%E9%83%A8/" target="_blank" rel="noopener">打开原文 ↗</a></div>
+        <div class="nodirect">二期招标文件公示页未取到直链。</div>
+      </div>
+    </div></div>
+  </article>
+
+  <article class="card">
+    <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+      <span class="tag">数据</span>
+        <h3>机床展闭幕：有规模，没成交
+          <small>9000 平方米、300 余个展位、60 家企业；官方侧记连集群营收都给到亿元，仍不写成交</small>
+        </h3>
+      <span class="chev"></span>
+    </div>
+    <div class="card-body"><div>
+      <dl>
+        <div><dt>为什么现在</dt><dd>展会昨天闭幕，客流与意向成交通常一周内出总结；拖到下月，数字只剩宣传口径。</dd></div>
+        <div><dt>先问谁</dt><dd>市经信局 <strong>装备工业科</strong>；展会主办方与承办场馆（明湖博览汇）。</dd></div>
+        <div><dt>要问的那句</dt><dd>“三天客流多少人次，意向成交多少？”</dd></div>
+        <div><dt>值不值</dt><dd>拿到客流与意向成交，就做<em>「9000 平方米的展换回多少订单」</em>；只有参展名单，就先放。</dd></div>
+        <div><dt>缺什么</dt><dd>客流人次、成交额、参展结构（本地整机与外地配套各占多少）。官方侧记今天 08:52 补了产业数据——<strong>2025 年集群营收 81.6 亿元、增速 27.2%，2026 年 1—8 月 76.2 亿元、增速 15.2%</strong>，11 家整机龙头加 70 多家配套，还写了与省高档数控机床技术创新中心签约——<em>唯独不写三天来了多少人、签了多少单</em>。这比“媒体没写”更值得问。</dd></div>
+      </dl>
+      <div class="src">
+        <div class="t">原文 · 官方侧记 / 媒体稿</div>
+        奋力打造长三角高端数控机床产业第一城——第三届平湖机床展侧记
+        <div class="links">
+          <a href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_02b57ef15e064bbdb30cd9067afb7380.html" target="_blank" rel="noopener">官方侧记 ↗</a>
+          <a href="https://tidenews.com.cn/news.html?id=3594909" target="_blank" rel="noopener">潮新闻 ↗</a>
+          <a href="https://finance.sina.com.cn/wm/2026-10-23/doc-iniwfmnn1893186.shtml" target="_blank" rel="noopener">新浪财经 ↗</a>
+        </div>
+      </div>
+    </div></div>
+  </article>
+</section>
+
+<!-- 三 -->
+<section class="sec" id="watch">
+  <div class="sec-head"><h2>留意，但今天不动</h2><span class="n">六条</span></div>
+    <article class="card">
+      <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+        <span class="tag">现场</span>
+        <h3>曹桥这一处水工程：批前和批后，隔了九分钟
+          <small>08:28 批前公告，08:37 批后公布；正文只有一张选址图，23 日还有一条排水管网二期</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>今早 08:28 挂出排污口批前公告，08:37 又挂出同一工程的选址批后公布——<strong>相隔九分钟</strong>。两份都还在公示栏首页，现在去问，日期和文号都对得上。</dd></div>
+          <div><dt>先问谁</dt><dd>市自然资源和规划局 <strong>国土空间规划科</strong>（两份公示的挂文单位）；实施主体再问曹桥街道 <strong>城建办</strong>。</dd></div>
+          <div><dt>要问的那句</dt><dd>“这份批前公告的公示期是哪几天、公示在哪里贴？为什么同一天就出了批后公布？”</dd></div>
+          <div><dt>值不值</dt><dd>拿到公示起止日和现场公示照片，就做<em>「公示九分钟走完的工程」</em>；对方能给出书面说明并补齐材料，就退回常规手续，不写。</dd></div>
+          <div><dt>缺什么</dt><dd>批后公布正文只有一张选址图（图片，无可读文字），规模、投资、公示期、实施单位全部未知。<strong>不推定程序有问题</strong>——也可能批前公示在项目现场另行张贴、线上只是补挂。两条同镇不同项目，也还没到“同一主体反复”的程度。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">原文 · 门户公告公示</div>
+          平湖市曹桥街道入河排污口及排污通道综合提升工程批前公告
+          <div class="links">
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_48dd1b158881d6fa0e758ee20bfdfca6.html" target="_blank" rel="noopener">批前公告 ↗</a>
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_fd61632e76a12eff795a17cdd86fd2d0.html" target="_blank" rel="noopener">批后公布 ↗</a>
+            <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_ddd1a689c127863719e7a96e54572f4a.html" target="_blank" rel="noopener">23 日排水选址 ↗</a>
+          </div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card">
+      <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+        <span class="tag">数据</span>
+        <h3>一笔省里的技改资金，公示了，但看不见数
+          <small>10 月 26 日 13:52 挂出，公示期 10 月 27 日—11 月 2 日；明细在 Word 附件里</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>公示<strong>明天才起算</strong>，七天内可提书面异议。附件在今天下午被站点挡回 403，越早打电话，越可能在公示期内把明细拿到手。</dd></div>
+          <div><dt>先问谁</dt><dd>公示只署“办公室（挂法制科牌子）”，依据是省经信厅等五部门文件；按经信局口问，公示留了三个号：<strong>陆冬芬 0573-85630411</strong>、陆晓艳 0573-85620843、孙龙 0573-85061517。</dd></div>
+          <div><dt>要问的那句</dt><dd>“这一批多少钱、分给几家企业、单家最高多少？节能降碳技改这一档，比上一批是增是减？”</dd></div>
+          <div><dt>值不值</dt><dd>拿到总额加企业名单，就做<em>「省里的技改钱落到平湖哪几家」</em>；只有“按文件执行”四个字，就先放。</dd></div>
+          <div><dt>缺什么</dt><dd>金额、企业名单、企业家数全在附件里——附件为 .doc，直接下载返回 <strong>403</strong>，按规矩不换客户端、不绕。是否含本地企业也未证。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">原文 · 门户公告公示</div>
+          关于 2026 年第一笔省工业与信息化发展财政专项资金（第三批）的公示
+          <div class="links"><a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_7c8b7bd9399e399b24ae478910cedb0b.html" target="_blank" rel="noopener">打开公示 ↗</a></div>
+          <div class="nodirect">附件下载返回 403，金额未见。</div>
+        </div>
+      </div></div>
+    </article>
+
+    <article class="card">
+      <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+        <span class="tag">数据</span>
+        <h3>国企招 19 人，财务和融资占了 4 个
+          <small>10 月 26 日 09:12 由财政局公示，14 家国企、19 人，公示到 10 月 30 日</small>
+        </h3>
+        <span class="chev"></span>
+      </div>
+      <div class="card-body"><div>
+        <dl>
+          <div><dt>为什么现在</dt><dd>公示期五个工作日，<strong>10 月 30 日截止</strong>；名单已具名，岗位结构能直接读出现在这几家平台公司在补什么能力。</dd></div>
+          <div><dt>先问谁</dt><dd>市财政局，公示电话 <strong>0573-85258209</strong>；岗位设置再问各国企人事。</dd></div>
+          <div><dt>要问的那句</dt><dd>“这批 19 人对多少个招聘计划、报名多少人？财务、投资融资岗是今年新增还是补缺？”</dd></div>
+          <div><dt>值不值</dt><dd>拿到报名人数与岗位增减，就做<em>「平湖国企在补哪类人」</em>；只有名单本身，就是公开信息，不构成稿子。</dd></div>
+          <div><dt>缺什么</dt><dd>报名人数、录用比、岗位是否新增。名单结构本地复算：交投 4、独山港投资 3、农开区投资 2、实业资产 2，其余 8 家各 1；财务类 3、投资融资 1。</dd></div>
+        </dl>
+        <div class="src">
+          <div class="t">原文 · 门户公告公示</div>
+          2026 年平湖市国有企业公开招聘拟录用人员公示（一）
+          <div class="links"><a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_64b269182462724adde3001463ddd41a.html" target="_blank" rel="noopener">打开公示 ↗</a></div>
+        </div>
+      </div></div>
+    </article>
+
+<ul class="excl">
+    <li><b>体育中心改造：今天没查到新东西</b><em>合同、开工令、施工期场馆开放安排都还空着，交易栏目也没有后续。顺带纠一个易混点：10 月 13 日那篇《平湖体育场地上新了》讲的是独山之星市民荟，不是体育中心。</em></li>
+    <li><b>三只基金：反馈期只剩三天</b><em>10 月 29 日截止，三份公示仍没写金额与份额。再拖只能等年报或采访补。</em></li>
+    <li><b>曹桥养老：招标公告还是没找到原件</b><em>同编号段另一份（垃圾房设备采购）能公开查到，唯独这一号没有公开页；只记“未取得”，不推定没招标。</em></li>
+  </ul>
+</section>
+
+<!-- 社交 -->
+<section class="sec" id="social">
+  <div class="sec-head"><h2>社交与热榜：看到了什么</h2><span class="n">未核，只作找人与找现场</span></div>
+
+  <article class="card">
+    <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+      <span class="tag">人物</span>
+      <h3>亚运电竞冠军“回到平湖”
+        <small>微博 10 月 24 日转发杭州网视频，标题称“载誉回到浙江平湖”，主体与关系都还没核</small>
+      </h3>
+      <span class="chev"></span>
+    </div>
+    <div class="card-body"><div>
+      <dl>
+        <div><dt>为什么现在</dt><dd>人刚回来，热度还在；人物稿最怕拖，一周后就成了旧闻。</dd></div>
+        <div><dt>先问谁</dt><dd>市文旅体局 <strong>体育科</strong>；再找本地的电竞馆、俱乐部或他就读过的学校。</dd></div>
+        <div><dt>要问的那句</dt><dd>“王科是不是平湖籍、或者在平湖培养的？参加的是哪个项目，市里有没有安排活动？”</dd></div>
+        <div><dt>值不值</dt><dd>拿到籍贯或培养关系，再加一个能拍到的场景（回母校、回家、训练馆），就做人物特写；只有一条转发视频，就先放。</dd></div>
+        <div><dt>缺什么</dt><dd>原视频未看，籍贯、项目、时间线全未知。<strong>这是“有人在传”，不是“平湖出了亚运冠军”</strong>——标题即未核，不得直接写成事实。</dd></div>
+      </dl>
+      <div class="src">
+        <div class="t">原帖 · 微博（转载视频）</div>
+        采访：电竞选手王科载誉回到浙江平湖，电竞亚运冠军是如何炼成的？
+        <div class="links"><a href="https://weibo.com/7906585618/Ro6BGmkEQ" target="_blank" rel="noopener">打开原帖 ↗</a></div>
+      </div>
+    </div></div>
+  </article>
+
+  <article class="card">
+    <div class="card-top" tabindex="0" role="button" aria-expanded="false">
+      <span class="tag">现场</span>
+      <h3>南辰名都业主：还没入住就这样
+        <small>微博 10 月 12 日，业主点名开发商，称“说了处理一直推”，配图未看</small>
+      </h3>
+      <span class="chev"></span>
+    </div>
+    <div class="card-body"><div>
+      <dl>
+        <div><dt>为什么现在</dt><dd>交房季的投诉，不跟进就沉底；业主还在小区里，人能找到、现场能拍。</dd></div>
+        <div><dt>先问谁</dt><dd>市住建局 <strong>房产管理科</strong>与<strong>工程质量监督站</strong>；再找物业与开发商客服。</dd></div>
+        <div><dt>要问的那句</dt><dd>“这个小区交付多久了，目前报修多少户，其中渗漏、空鼓这类质量问题占多少？”</dd></div>
+        <div><dt>值不值</dt><dd>拿到报修户数和整改进度，就做“交房质量”的民生稿；只有一条微博，就先放。</dd></div>
+        <div><dt>缺什么</dt><dd>配图未看、业主身份未核、交付时间未知。单条投诉<strong>不构成普遍问题</strong>，得先有第二个业主或一次现场。</dd></div>
+      </dl>
+      <div class="src">
+        <div class="t">原帖 · 微博</div>
+        鸿翔你作为开发商有何感想？还没入住呢就这样？
+        <div class="links"><a href="https://weibo.com/6238948220/Rmlb1dqfS" target="_blank" rel="noopener">打开原帖 ↗</a></div>
+      </div>
+    </div></div>
+  </article>
+
+  <ul class="excl">
+    <li><b>会展中心成了“新地标”</b><em>小红书 10 月 25 日图文。这只是传播侧：机床展闭幕当天，有人把它当打卡点发。说明有人在传，不说明客流与成交。</em></li>
+    <li><b>热榜三条，一条都不借</b><em>浙江宣传谈“AI 短剧降智”是省级议题，没有平湖落点；一条交通事故视频没有落点；公交站牌被攻击那条是公安部通报，上周已判过，不重复。</em></li>
+    <li><b>微信十条全部没有日期</b><em>里面混着疫情防控封控区、破难先锋名单这类旧稿，还有“太行平湖”“平湖铜锣关”等异地同名，整体不进研判。</em></li>
+    <li><b>生活类只当氛围</b><em>雨后平湖、公园咖啡、美食、小众游——其中 10 月 24 日那张“雨后平湖”是台风过后少见的本地实拍，可作现场参照，但没有数字。</em></li>
+  </ul>
+</section>
+
+<!-- 四 -->
+<section class="sec" id="days">
+  <div class="sec-head"><h2>接下来的日子</h2><span class="n">六个节点</span></div>
+  <div class="timeline">
+    <div class="tl"><div class="d">10 月 27 日</div><div class="t">省工信专项资金第三批开始公示，七天窗口，金额在 403 挡住的附件里。</div></div>
+    <div class="tl"><div class="d">10 月 28 日</div><div class="t">第二批科发资金拟补助公示最后一天，名单与金额在附件里。</div></div>
+    <div class="tl"><div class="d">10 月 29 日</div><div class="t">三只基金的公众反馈期截止，过了只能靠年报或采访补。</div></div>
+    <div class="tl"><div class="d">10 月 29 日</div><div class="t">长期护理保险第三批失能评定公示到期，可与曹桥养老并线核对。</div></div>
+    <div class="tl"><div class="d">10 月 30 日</div><div class="t">第二批外发资金补助公示到期，明细表仍只有单位、属地、类型，没有金额。</div></div>
+    <div class="tl"><div class="d">12 月 20 日</div><div class="t">体育中心改造对外承诺的完工节点，合同与开工令至今未见。</div></div>
+  </div>
+</section>
+
+<!-- 五 -->
+<section class="sec" id="out">
+  <div class="sec-head"><h2>今天排除了什么</h2><span class="n">不写进推送</span></div>
+  <ul class="excl">
+    <li><b>《我市启动防台风四级应急响应》</b><em>标题里的“我市”是无锡，10 月 23 日 21 时 34 分发布，与平湖无关。以后看到“我市”必须先认发布主体。</em></li>
+    <li><b>卫生中级职称评前公示</b><em>上次已见，这次只是重新出现在列表里，旧事新址，不算新触发。</em></li>
+    <li><b>粮油价格第 42 期：全线持平</b><em>晚粳米、食用油、面粉、晚稻价格与上周一字不差，只有玉米从 2.40 降到 2.38 元/公斤。一条没有变化的周报不构成新闻，但它是秋粮收购季的底数，留着备查。</em></li>
+    <li><b>烟草专卖局许可证公告第 84 号</b><em>与上周的第 83 号同属例行公告，属常规手续，不立卡。</em></li>
+    <li><b>今天七条“项”前冲、匠心智造、少年足够燃一类</b><em>要闻版上午连发六条活动与总结稿，没有钱、没有人、没有期限，按规则不入研判。</em></li>
+    <li><b>深圳龙岗平湖街道一类同名内容</b><em>地名撞车，全部剔除；社交层另见“上海救护车转运到平湖费用”一条，属异地商家投放，也不接。</em></li>
+  </ul>
+</section>
+
+<footer>
+  <span>内部参考 · 请勿外传</span>
+  <span>数据截至 2026-10-26 15:45 · 午后已刷新</span>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.card-top').forEach(function(top){
+  function toggle(){
+    var card = top.closest('.card');
+    var open = card.classList.toggle('open');
+    top.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  top.addEventListener('click', function(e){
+    if (e.target.closest('a')) return;
+    toggle();
+  });
+  top.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+});
+</script>
+</body>
+</html>

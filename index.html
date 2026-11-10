@@ -3,250 +3,361 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>平湖雷达 · 2026-11-04｜节点揭牌了，厂房还在装修</title>
+<title>平湖雷达 · 2026-11-10｜会开了，条文没发</title>
 <style>
   :root{
-    --paper:#f6f3ec; --ink:#1e1c19; --ink-2:#4a453c; --ink-3:#7d766a;
-    --rule:#d8d2c4; --accent:#b3462f; --card:#fbf9f4;
+    --paper:#f7f4ed; --ink:#1d1b18; --ink-2:#494339; --ink-3:#7e7669;
+    --rule:#dad3c3; --accent:#a83f2b; --card:#fcfaf5;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--paper);color:var(--ink)}
   body{
     font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
-    line-height:1.75; font-size:17px; -webkit-font-smoothing:antialiased;
+    line-height:1.78; font-size:17px; -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:760px;margin:0 auto;padding:64px 26px 96px}
-  .masthead{border-bottom:1px solid var(--ink);padding-bottom:18px;margin-bottom:34px}
-  .kicker{font-size:12px;letter-spacing:.22em;color:var(--ink-3)}
-  .masthead h1{font-size:29px;line-height:1.45;margin:14px 0 10px;font-weight:600;letter-spacing:-.01em}
-  .masthead .date{font-size:13px;color:var(--ink-3);letter-spacing:.06em}
-  .lede{font-size:19px;line-height:1.85;color:var(--ink-2);margin:24px 0 12px}
+  .wrap{max-width:748px;margin:0 auto;padding:66px 26px 100px}
+  /* 报头 */
+  .masthead{border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:30px}
+  .kicker{font-size:11.5px;letter-spacing:.26em;color:var(--ink-3);text-transform:uppercase}
+  .masthead h1{font-size:31px;line-height:1.42;margin:16px 0 12px;font-weight:600;letter-spacing:-.015em}
+  .masthead .date{font-size:13px;color:var(--ink-3);letter-spacing:.08em}
+  /* 午后更新条 */
+  .upd{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0 15px;margin:0 0 6px}
+  .upd-lbl{font-size:10.5px;letter-spacing:.22em;color:var(--accent);margin-bottom:8px}
+  .upd p{margin:0;font-size:14.8px;line-height:1.8;color:var(--ink-3)}
+  /* 导语 */
+  .lede{font-size:19.5px;line-height:1.86;color:var(--ink-2);margin:26px 0 10px}
   .lede em{font-style:normal;color:var(--accent)}
-  .lede-sub{font-size:15.5px;color:var(--ink-3);margin:0 0 40px}
-  h2.sec{font-size:12px;letter-spacing:.24em;color:var(--ink-3);font-weight:600;
-    margin:54px 0 20px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
-  details.card{background:var(--card);border:1px solid var(--rule);margin:0 0 20px}
-  details.card[open]{border-color:#c9bda4}
+  .lede-sub{font-size:15px;color:var(--ink-3);margin:0 0 44px;line-height:1.9}
+  h2.sec{font-size:11.5px;letter-spacing:.26em;color:var(--ink-3);font-weight:600;
+    margin:56px 0 18px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+  /* 卡片 */
+  details.card{background:var(--card);border:1px solid var(--rule);margin:0 0 18px;transition:border-color .15s}
+  details.card[open]{border-color:#c6b99f}
   summary{list-style:none;cursor:pointer;padding:26px 26px 22px;position:relative}
   summary::-webkit-details-marker{display:none}
-  .tag{display:inline-block;font-size:11px;letter-spacing:.16em;color:var(--accent);
-    border:1px solid var(--accent);padding:2px 8px;margin-bottom:14px}
-  .tag.mute{color:var(--ink-3);border-color:var(--rule)}
-  summary h3{font-size:22px;line-height:1.5;margin:0 0 12px;font-weight:600}
-  .core{font-size:15.5px;color:var(--ink-2);margin:0;line-height:1.8}
-  .hint{position:absolute;right:26px;bottom:22px;font-size:11px;letter-spacing:.14em;color:var(--ink-3)}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.18em;color:var(--accent);
+    border:1px solid var(--accent);padding:2px 9px;margin-bottom:15px}
+  .tag.grey{color:var(--ink-3);border-color:var(--rule)}
+  summary h3{font-size:22.5px;line-height:1.5;margin:0 0 12px;font-weight:600}
+  .core{font-size:15.5px;color:var(--ink-2);margin:0;line-height:1.82}
+  .hint{position:absolute;right:24px;bottom:20px;font-size:11px;letter-spacing:.16em;color:var(--ink-3)}
   details[open] .hint{color:var(--accent)}
-  .body{padding:2px 26px 28px;border-top:1px solid var(--rule);margin-top:6px}
-  .facts{margin:18px 0 0;padding:0;list-style:none}
-  .facts li{display:flex;gap:14px;padding:7px 0;border-bottom:1px dotted #e2dbcb;font-size:15px}
-  .facts li:last-child{border-bottom:none}
-  .facts .k{flex:0 0 76px;color:var(--ink-3);font-size:13px;letter-spacing:.04em;padding-top:3px}
-  .facts .v{flex:1}
-  .num{font-variant-numeric:tabular-nums;font-weight:600}
+  .body{padding:4px 26px 30px;border-top:1px solid var(--rule);margin-top:8px}
   .block{margin:22px 0 0}
-  .block .lbl{font-size:11px;letter-spacing:.2em;color:var(--accent);margin-bottom:6px}
-  .block p{margin:0;font-size:15.5px;line-height:1.8;color:var(--ink-2)}
-  .ask{background:#f1ece0;border-left:2px solid var(--accent);padding:15px 18px;margin:8px 0 0}
-  .ask p{margin:0;font-size:16px;color:var(--ink)}
-  ul.who{margin:6px 0 0;padding-left:0;list-style:none;font-size:15px;color:var(--ink-2)}
-  ul.who li{padding:3px 0}
-  ul.who li::before{content:"—";color:var(--ink-3);margin-right:8px}
-  .links{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+  .block .lbl{font-size:10.5px;letter-spacing:.22em;color:var(--accent);margin-bottom:7px}
+  .block p{margin:0;font-size:15.5px;line-height:1.82;color:var(--ink-2)}
+  .block ul{margin:6px 0 0;padding-left:17px}
+  .block li{font-size:15px;line-height:1.8;color:var(--ink-2);margin:4px 0}
+  .ask{background:#f2ecdf;border-left:2px solid var(--accent);padding:15px 18px;margin:9px 0 0}
+  .ask p{margin:0;font-size:16px;color:var(--ink);line-height:1.78}
+  .links{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
   .links a{display:inline-block;font-size:13.5px;text-decoration:none;color:var(--ink);
     border:1px solid var(--ink);padding:7px 14px;letter-spacing:.03em}
   .links a.accent{border-color:var(--accent);color:var(--accent)}
-  .nodirect{font-size:12.5px;color:var(--ink-3);margin:24px 0 0}
+  .links a:hover{background:var(--ink);color:var(--paper)}
+  .links a.accent:hover{background:var(--accent);color:var(--paper)}
+  .nodirect{font-size:12.5px;color:var(--ink-3);margin:22px 0 0;letter-spacing:.02em}
+  /* 观察与排除 */
   .obs{margin:0;padding:0;list-style:none}
-  .obs li{padding:12px 0;border-bottom:1px dotted #e2dbcb;font-size:15.5px;color:var(--ink-2)}
+  .obs li{padding:14px 0;border-bottom:1px dotted #e3dccb;font-size:15.3px;color:var(--ink-2)}
   .obs li b{color:var(--ink);font-weight:600}
-  .obs li span{color:var(--ink-3);font-size:14px}
-  .tl{margin:8px 0 0;padding:0;list-style:none}
-  .tl li{display:flex;gap:20px;padding:10px 0;border-bottom:1px dotted #e2dbcb;font-size:15px}
-  .tl .d{flex:0 0 64px;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  .obs li span{display:block;color:var(--ink-3);font-size:13.8px;margin-top:3px}
+  .excl{margin:0;padding:0;list-style:none}
+  .excl li{padding:9px 0;font-size:14.6px;color:var(--ink-3);border-bottom:1px dotted #e3dccb}
+  /* 时间轴 */
+  .tl{margin:10px 0 0;padding:0;list-style:none}
+  .tl li{display:flex;gap:20px;padding:11px 0;border-bottom:1px dotted #e3dccb;font-size:15px;align-items:baseline}
+  .tl .d{flex:0 0 70px;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:.02em}
   .tl .t{flex:1;color:var(--ink-2)}
-  .foot{margin-top:64px;padding-top:18px;border-top:1px solid var(--ink);
-    font-size:12px;color:var(--ink-3);letter-spacing:.08em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  .plan{margin:0 0 26px}
-  .plan h4{margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.55}
-  .plan .pip{font-size:11px;letter-spacing:.2em;color:var(--accent);margin:0 0 8px}
-  .plan p{margin:0 0 8px;font-size:15.5px;color:var(--ink-2);line-height:1.8}
-  .plan .why{font-size:14px;color:var(--ink-3)}
+  .tl li.now .d{font-weight:600}
+  .tl li.now .t{color:var(--ink)}
+  .foot{margin-top:66px;padding-top:18px;border-top:1px solid var(--ink);
+    font-size:11.5px;color:var(--ink-3);letter-spacing:.1em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media (max-width:560px){
+    .wrap{padding:44px 20px 76px}
+    .masthead h1{font-size:26px}
+    .lede{font-size:18px}
+    summary h3{font-size:20px}
+    summary{padding:22px 18px 20px}
+    .body{padding:4px 18px 26px}
+    .hint{display:none}
+  }
 </style>
 </head>
 <body>
 <div style="font:12px/1.7 -apple-system,'Hiragino Sans GB',sans-serif;color:#8a8073;padding:9px 32px;border-bottom:1px solid #d9cfbe;background:#f4efe6;letter-spacing:.08em">平湖雷达 · 内部参考，请勿外传 · <a href="./archive/index.html" style="color:#9c3d2e;text-decoration:none">往期</a></div>
 <div class="wrap">
 
-  <div class="masthead">
-    <div class="kicker">平 湖 雷 达 · 内 部 参 考</div>
-    <h1>算力节点在乌镇揭牌，要用它的那间厂房，还在新埭装修</h1>
-    <div class="date">2026 年 11 月 4 日　星期三　晨报</div>
+  <header class="masthead">
+    <div class="kicker">平湖雷达 · 晨间</div>
+    <h1>会开了，条文没发</h1>
+    <div class="date">2026 年 11 月 10 日　星期二　内部参考　·　15:30 已刷新</div>
+  </header>
+
+  <p class="lede">昨天上午的两篇要闻，是本周最硬的两个程序节点：一份<em>公租房管理办法修订</em>，一份<em>新能源重卡五年方案</em>，都只发了"审议了什么"，没发"改成了什么"。</p>
+  <p class="lede-sub">今天不派人跑三个会。四件事：两个策划切口（收割窗口今天收尾，双十一明天）、两条硬线索（都只需要一通电话）。进博会今天闭馆，昨天已给过电话，不重复。</p>
+
+  <div class="upd">
+    <div class="upd-lbl">15:30 更新 · 午后新到 9 条，无一条够"值得动"</div>
+    <p>门户下午又挂 9 条：5 条产业宣传稿（只有形容词）、1 条空正文公示、2 条申报公示、1 份月度用电数据。唯一带数字的是用电——单独成卡，见下。</p>
   </div>
 
-  <p class="lede">判断：<em>建议动两条</em>——一条打电话，一条去工地。其余四条只值一个电话或一行记录。</p>
-  <p class="lede-sub">三条旧承诺已过期：基金出资额过了六天、机床展成交过了四天、曹桥排污口过了两天。今天真正能动的只有两件：一个省级算力节点落进了谁的厂房；一次拟吊销二十八张执照，今年到底吊销了多少家。</p>
+  <h2 class="sec">午后新到 · 一份数据，三行别的</h2>
 
-  <h2 class="sec">今 日 策 划</h2>
+  <details class="card">
+    <summary>
+      <span class="tag">数据 · 今天 15:14 挂出</span>
+      <h3>10 月用电：单月同比全负，累计还在涨</h3>
+      <p class="core">全社会用电当月 49,869.75 万千瓦时、同比 -4.08%，累计 521,265.66 万千瓦时、+5.45%；工业用电当月 -1.95%，累计 +2.65%。</p>
+      <span class="hint">展开</span>
+    </summary>
+    <div class="body">
+      <div class="block">
+        <div class="lbl">事实</div>
+        <ul>
+          <li><b>谁</b>：国网平湖市供电公司；信息来源标办公室（党委办公室），成文日期 11 月 10 日。</li>
+          <li><b>什么</b>：全社会用电 49,869.75 万千瓦时（当月 -4.08%）、累计 521,265.66 万千瓦时（+5.45%）；工业用电 31,546.86 万千瓦时（-1.95%）、累计 316,919.20 万千瓦时（+2.65%）；供电量 -5.60%、售电量 -5.73%；最高日负荷 82.64 万千瓦（-2.69%）；线损率 1.63%，同比升 0.14 个百分点。</li>
+          <li><b>何时</b>：11 月 10 日 15:14 发布，数据为 10 月整月。</li>
+          <li><b>何地</b>：全市。</li>
+          <li><b>意味着</b>：当月各项（用电量、供电量、售电量、最高负荷）同比全负、累计仍正，只说明"这个月比去年同月少用了电"，不说明全年转弱。前三季度 GDP 报 +7.7%，与月度用电既不同口径也不同时段，只能并看，不能互相抵消。</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>数据今天下午才挂；列表页把它的日期标成 2024-09-04，与 11 月 6 日那份三季度经济通报同一个错标毛病，按日期筛根本筛不到，只能人工抓。这是本月唯一一份带完整同比的能源数据。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <p>国网平湖市供电公司办公室（发布口，信息来源标注的科室）；市统计局工交科（季度 GDP 与用电的对账口径）。</p>
+      </div>
+      <div class="ask"><p><b>要问的那一句：</b>10 月单月全社会与工业用电同时转负，是气温、大用户检修还是减产？贡献最大的前几户是哪几家、各少了多少度？</p></div>
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到"哪几家、少了多少度"就做"一度电看四季度"；只有"同比下降"四个字，先放线程，等下月同期数。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">缺什么</div>
+        <p>去年同月基数、分行业与前十户用电、气温修正后的可比数、单月转负的官方解释。另：原文把累计最高负荷写成"104.98 千瓦"，少一个"万"字，属于公示文本差错，回问时一并核。</p>
+      </div>
+      <div class="links">
+        <a class="accent" href="https://www.pinghu.gov.cn/col/col1229397284/art/2026/art_a4224a5c5fa84feaa76c431789e519a0.html" target="_blank" rel="noopener">原文 · 平湖电力 10 月主要指标</a>
+      </div>
+    </div>
+  </details>
 
-  <div class="plan">
-    <p class="pip">切 口 一</p>
-    <h4>扫一次码：一件箱包的碳足迹，和一件羽绒服的质量分级</h4>
-    <p>不写产业升级，写扫码那一下。去兴发箱包扫标识，看跳出来的是什么、这串数据谁在维护；再到平湖·中国服装城抽十件同价位羽绒服，数几件有质量分级码、标注与实物对不对得上。两次扫码，同一个问题：消费者能不能看懂。</p>
-    <p class="why">为什么现在：一万只挂分时碳足迹标识的旅行箱近日发往欧洲，全国首批（今日平湖 11-03）；双十一在 11-11，羽绒服正是当季。</p>
-  </div>
+  <ul class="obs">
+    <li><b>空公示第 14 份</b>：钟埭街道"2026 年工业园区基础设施配套项目"用地预审与选址意见书批前公示，08:45 挂出，页面只有标题、时间与信息来源，无正文、无附件、无红线图。
+      <span>此前 13 份跨自然资源和规划、教育、公安、农业农村四口，这次落在开发区（钟埭街道）与用地预审环节。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_20f631e89898ec6171b7d55a51a0af1f.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
+    <li><b>秸秆综合利用补助开始申报</b>：公示 11 月 11 日至 17 日，联系市农业农村局 0573-85628699；正文不写补助标准与金额，全在附件那份 .doc 里，附件今天没取。
+      <span>要判断钱给了谁，得先把附件拿到；只剩 5 个工作日。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_e2d37364b9f5581e720a514c18fe42dc.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
+    <li><b>生命健康产业奖补申报，11 月 27 日截止</b>：市场监管局 2 号楼 317 办公室收纸质材料，咨询 0573-85621169；条款为政策第 10、12、17 条，认证费低于 20 万按实补、达 20 万最高奖 20 万，单品种只补一次，单企业年度上限 100 万。
+      <span>金额与门槛都写清了，缺的是今年有几家报、实际补出去多少。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_9ca3dc6779678b736b01075b95dcbbbb.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
+  </ul>
 
-  <div class="plan">
-    <p class="pip">切 口 二</p>
-    <h4>跟一台收割机一整天：湿谷含水率、烘干机一天吞多少吨</h4>
-    <p>不写丰收。早上跟车下田，记三件事：湿谷含水率几点最高、烘干中心排队几小时、连阴雨谁来兜底。落点是一张「一亩田从田头到入库几小时」的时间表。</p>
-    <p class="why">为什么现在：晚稻收割进入最后窗口（嘉兴一百三十万亩 10-28 开镰，已核），11 月上旬一过就转冬种。</p>
-  </div>
-
-  <h2 class="sec">今 日 线 索</h2>
+  <h2 class="sec">头条 · 策划</h2>
 
   <details class="card" open>
     <summary>
-      <span class="tag">事 件</span>
-      <h3>算力节点在乌镇揭牌，海易特的厂房在新埭装修</h3>
-      <p class="core">一个省级算力节点揭牌，共建方里有平湖企业，招引目标写着「入驻平湖」；本地三个场景进了需求清单，要把机器人用到全厂的是一家电子厂，要把产线放进新埭的是一家康复机器人公司。</p>
-      <span class="hint">展开看五问 →</span>
+      <span class="tag">现场 · 今天最后窗口</span>
+      <h3>跟一台收割机一整天</h3>
+      <p class="core">不写丰收，写时间与水分：湿谷含水率多少、烘干机一天吞多少吨、排队几小时、一亩田从田头到入库要几个钟头。</p>
+      <span class="hint">展开</span>
     </summary>
     <div class="body">
-      <ul class="facts">
-        <li><span class="k">谁</span><span class="v">平湖市经信局（承办方）；节点由浙江省新型互联网交换中心与平湖泽悦联合共建；海易特医疗科技（上海）董事长范卫东；浙江巨传电子厂长滕井苏。</span></li>
-        <li><span class="k">什么</span><span class="v">11-02 下午在乌镇办「嘉兴市人工智能产业链协同创新算力与具身智能专场对接会」：国家算力互联互通（浙江）节点揭牌，是石科技等企业入驻；发布「人工智能+制造」十大场景需求清单，其中含平湖三个场景；平湖算力企业与多家具身智能企业签约。</span></li>
-        <li><span class="k">何时</span><span class="v">活动 11-02 下午，稿件 11-03 11:32。海易特「预计明年上半年实现机器人大规模量产」，目前生产基地与运营中心处于装修阶段。</span></li>
-        <li><span class="k">何地</span><span class="v">会场在乌镇；节点计划建成「长三角首个省域级算力互联互通核心节点」（媒体口径）；海易特的生产基地与运营中心落在新埭镇。</span></li>
-        <li><span class="k">意味着</span><span class="v">节点是省级的，可落点写着平湖。可核的是数字：节点算力规模、投资、用电；海易特的用地、投资额、用工。这些数，稿子里一个都没有。</span></li>
-      </ul>
-
-      <div class="block"><div class="lbl">为什么现在</div>
-        <p>节点刚揭牌，签约刚发生；海易特说「明年上半年量产」，倒推设备进场与招工就在这个季度。窗口只有这几个月。</p></div>
-
-      <div class="block"><div class="lbl">先问谁</div>
-        <ul class="who">
-          <li>市经信局 数字经济（人工智能）科</li>
-          <li>新埭镇 经济发展办</li>
-          <li>海易特医疗科技（上海）董事长 范卫东（可经新埭镇约）</li>
-        </ul></div>
-
-      <div class="block"><div class="lbl">要问的那一句</div>
-        <div class="ask"><p>节点在平湖的算力规模是多少 P、投资多少、由谁运营？十大场景清单里平湖的三个，分别是哪三家企业？海易特在新埭的用地多少亩、投资多少，明年上半年量产的是哪几款机器人？</p></div></div>
-
-      <div class="block"><div class="lbl">值不值</div>
-        <p>拿到算力规模与海易特投资额，就做「一个省级节点，落在谁的厂房里」；只有揭牌消息，就先放。</p></div>
-
-      <div class="block"><div class="lbl">缺什么</div>
-        <p>节点算力规模与投资额；平湖泽悦的股权与角色；十大清单里平湖三个场景的企业名；海易特用地面积、投资额、用工；场景落地的补贴口径。</p></div>
-
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>昨天上午的官方稿只说"推进农业秋收冬种"，没有一个数字。11 月上旬是最后收割窗口，之后转冬种，现场过了这周就没有。另一头，11 月 6 日挂出的晚稻订单公示给了硬对照：分单系数浙禾香2号约 385 公斤/亩、秀水121 约 124、常规稻约 123——优质稻是普通稻的三倍，公告只给系数，不给理由。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <p>市农业农村局农机科；一家烘干中心；一个种粮合作社。</p>
+      </div>
+      <div class="ask"><p><b>要问的那一句：</b>全市烘干机多少台、日处理能力多少吨？收割高峰排队要等几小时、烘干多少钱一斤？</p></div>
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>跟完一天、拿到烘干能力与排队时长这两个数，就做"三倍系数与一台烘干机"；只有"秋收顺利"，先放。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">缺什么</div>
+        <p>烘干机台数与日处理吨位、湿谷含水率区间、烘干单价、跨区机具数。系数须回原文核对，公告页可能没有附件。</p>
+      </div>
       <div class="links">
-        <a class="accent" href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_bd84c502f0f74e01bf22d18af81e3a54.html" target="_blank" rel="noopener">读原稿：深化合作 智创未来</a>
+        <a class="accent" href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_e20d3544d43c420cb9a0eea25e29c276.html" target="_blank" rel="noopener">官方稿 · 推进秋收冬种</a>
+        <span class="nodirect">晚稻订单公示原稿无直链</span>
       </div>
     </div>
   </details>
 
   <details class="card">
     <summary>
-      <span class="tag">数 据</span>
-      <h3>一次拟吊销二十八张营业执照，两家公司同一个法人</h3>
-      <p class="core">同一个法条、同一批二十八家。名单里两家新能源公司是同一个法定代表人，一家置业公司也在其中。真正缺的不是名单，是分母：今年一共吊销了多少家。</p>
-      <span class="hint">展开看五问 →</span>
+      <span class="tag">数据 · 明天过期</span>
+      <h3>一件羽绒服的身份证：十款全过关，没说是哪十款</h3>
+      <p class="core">官方抽检十款全合格，抽样框、价位段、渠道一个没写。双十一就在明天，过了这周只剩"合格"两个字。</p>
+      <span class="hint">展开</span>
     </summary>
     <div class="body">
-      <ul class="facts">
-        <li><span class="k">谁</span><span class="v">平湖市市场监督管理局（公告联系人为办公室 陶禹涵、丁晓愿，0573-85825735）。</span></li>
-        <li><span class="k">什么</span><span class="v">拟吊销嘉兴吾哥建筑劳务有限公司等二十八家企业营业执照。理由同一法条：2024、2025 连续两年未按规定报送年报、被列入经营异常名录未改正，且登记住所无法联系。</span></li>
-        <li><span class="k">何时</span><span class="v">公告 11-03 10:34，落款 10-30；自收到告知书起五个工作日内可陈述、申辩或要求听证，逾期视为放弃。</span></li>
-        <li><span class="k">何地</span><span class="v">平湖市。名单含嘉兴世茂新体验置业、中能锂电科技（嘉兴）、翠鸟新能源科技（浙江）、平湖市南国精美食品厂等。</span></li>
-        <li><span class="k">意味着</span><span class="v">一次批量二十八家，全部走同一条款；中能锂电与翠鸟新能源是同一个法定代表人（秦嘉毅）。可核的是比例：二十八家在存量里占多少、其中多少是当年招商落地的。</span></li>
-      </ul>
-
-      <div class="block"><div class="lbl">为什么现在</div>
-        <p>听证告知期只有五个工作日，过期企业就失去申辩机会；这也是年底「出清」节奏的第一个可核样本。</p></div>
-
-      <div class="block"><div class="lbl">先问谁</div>
-        <ul class="who">
-          <li>市场监管局 信用监管科（公告登了办公室电话 0573-85825735）</li>
-        </ul></div>
-
-      <div class="block"><div class="lbl">要问的那一句</div>
-        <div class="ask"><p>今年平湖一共吊销了多少家企业、这是第几批？连续两年未报年报被列异、还没清掉的企业现有多少家？这二十八家里有几家是当年招商引资落地的？</p></div></div>
-
-      <div class="block"><div class="lbl">值不值</div>
-        <p>拿到今年吊销总数与存量，就做「一边招商、一边出清：平湖一年清掉多少张执照」；只有这份名单，就先放。</p></div>
-
-      <div class="block"><div class="lbl">缺什么</div>
-        <p>今年吊销总数与分批节奏；二十八家的注册年份分布；连续两年未年报企业的全市存量；名单里是否有政府招商项目。</p></div>
-
+      <div class="block">
+        <div class="lbl">为什么是现在</div>
+        <p>11 月 5 日稿：市消保委联合市产品质量监督检验所，本地 10 家企业 10 款样品做 10 项检测全部合格，样品均标 90% 绒子含量（国标要求实测不低于 85%），充绒量误差不小于 -5.0%。这十款怎么选的、卖多少钱、来自服装城还是直播间，一个字没有；质量分级二维码也没提。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <p>市消保委；市产品质量监督检验所（"常态化抽检"的口径出自该所负责人）。</p>
+      </div>
+      <div class="ask"><p><b>要问的那一句：</b>这十款怎么选的——服装城、街边门店还是直播间？价位段多少？十份检测报告的编号能给一份吗？</p></div>
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到抽样框与报告编号，就自购十件做"扫码能看见什么"；只有"全部合格"这一句，先放。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">缺什么</div>
+        <p>抽样框与抽样方法、直播间样品占比、抽检批次与频次、报告编号、分级码推广企业数。无报告不写质量结论，只写标识与标注。</p>
+      </div>
       <div class="links">
-        <a class="accent" href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_2df9d372e7ba9ba7207040516635232d.html" target="_blank" rel="noopener">读原稿：听证告知公告</a>
+        <span class="nodirect">原稿无直链（11-05 今日平湖稿）</span>
       </div>
     </div>
   </details>
 
-  <h2 class="sec">热 点 × 平 湖</h2>
-  <details class="card">
+  <h2 class="sec">硬线索 · 两条都要打电话</h2>
+
+  <details class="card" open>
     <summary>
-      <span class="tag mute">借 力</span>
-      <h3>进博会明天开幕，平湖去了谁、买了什么</h3>
-      <p class="core">第九届进博会 11 月 5 日至 10 日，8 日起对社会观众开放。平湖企业是采购方，市民八日后可进场；交易分团报名企业数、去年成交额都没有公开数。</p>
-      <span class="hint">展开 →</span>
+      <span class="tag">事件 · 制度变更</span>
+      <h3>公租房管理办法修订：准入、配租、退出都动了，条文没公开</h3>
+      <p class="core">11 月 6 日常务会议听取并审议修订情况汇报，要求"审核到位、管理到位、宣传到位"。稿子只写了要求，没写改了什么。</p>
+      <span class="hint">展开</span>
     </summary>
     <div class="body">
-      <div class="block"><div class="lbl">与平湖的关系</div>
-        <p>平湖是采购方不是参展方，落点在钱和清单：去了多少家、买哪几类、成交多少。</p></div>
-      <div class="block"><div class="lbl">可借的角度</div>
-        <p>别写「积极组团」，写两张单子：谁去了、买了什么。开幕前一天向商务局要采购商名单，八日再补一条观众侧。</p></div>
-      <div class="block"><div class="lbl">不借</div>
-        <p>社保补贴扩围（平湖无落点口径）、美邮轮海上养老、佛州坠机——缺本地反应，只记留意。</p></div>
-      <p class="nodirect">官方日程与展期，原稿无直链。</p>
+      <div class="block">
+        <div class="lbl">事实</div>
+        <ul>
+          <li><b>谁</b>：市政府；11 月 6 日上午代市长陈王进主持，常务副市长金一，副市长陈伟、宋怡玲、周启程、张瑜、潘加林、谭再锋出席。</li>
+          <li><b>什么</b>：听取并审议《关于修订平湖市公共租赁住房管理办法的情况汇报》，要求规范准入、配租、退出三个环节，强化跨部门数据共享核验，全面梳理全市房源，探索房源统筹调度机制。</li>
+          <li><b>何时</b>：11 月 6 日开会，11 月 9 日 08:39 发布——昨天早上才可读。</li>
+          <li><b>何地</b>：全市公租房。</li>
+          <li><b>意味着</b>：条文、房源套数、轮候户数、修订前后对照都没有随稿发布。"三个到位"是要求，不是条款；门槛到底动了哪几条，现在只能问。</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <p>市住建局住房保障科。</p>
+      </div>
+      <div class="ask"><p><b>要问的那一句：</b>修订稿在哪能看到？准入、配租、退出三条各改了什么？全市现有房源多少套、轮候多少户？</p></div>
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到条文加房源与轮候两个数，就做"公租房的门槛改了哪三条"；只有"会议审议通过"，先放，留在线程里等稿子。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">缺什么</div>
+        <p>修订稿全文与对照表、房源套数与分布、轮候户数与平均轮候时间、退出条款（收入与房产核查频次）、统筹调度的适用范围。会议稿只证明"审议过、要求了"，不推出保障房不足、也不推出审核变严。</p>
+      </div>
+      <div class="links">
+        <a class="accent" href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_6d344cc6aa254d79b5aa42ba570119ed.html" target="_blank" rel="noopener">原文 · 第六十次常务会议</a>
+      </div>
     </div>
   </details>
 
-  <h2 class="sec">其 他 观 察</h2>
+  <details class="card" open>
+    <summary>
+      <span class="tag">反差 · 同一周的两张纸</span>
+      <h3>一边限行，一边只补四辆</h3>
+      <p class="core">政府在同一天审了新能源重卡五年方案，又挂出第二批国四柴油货车淘汰补助：4 辆、14.3 万元。第一批是 17 辆、56.5 万元。</p>
+      <span class="hint">展开</span>
+    </summary>
+    <div class="body">
+      <div class="block">
+        <div class="lbl">事实</div>
+        <ul>
+          <li><b>谁</b>：市政府审方案；生态环境分局与交通运输部门管限行、管补助。</li>
+          <li><b>什么</b>：审议《平湖市大力推进新能源重卡规模化应用行动方案（2026—2030年）》，要求目标分解到具体点位、具体场景、具体责任人，招引整车销售、充换电配套、车辆运维，形成"车—站—维—储"。同日 10:44 第二批非营运国四中重型柴油货车淘汰更新补助名单公示：<b>4 辆、14.3 万元</b>（两家副食品经营部各 4.5 万、一家管道工程队 3.5 万、一家实业公司 1.8 万）。</li>
+          <li><b>何时</b>：11 月 6 日审议、11 月 9 日发布；第二批公示 11 月 9 日至 13 日。第一批 11 月 2 日至 6 日公示，17 辆淘汰加 1 辆更新、56.5 万元。</li>
+          <li><b>何地</b>：全市，重点在货运与港口集疏运。</li>
+          <li><b>意味着</b>：一周之内补助量掉到四分之一；第二批 4 户里 3 户登记在经营主体名下，却按"非营运"申领。方案要换车，补助在缩量——两件事得放在一张桌上问。</li>
+        </ul>
+      </div>
+      <div class="block">
+        <div class="lbl">先问谁</div>
+        <p>市发改局（方案归口科室）；市生态环境分局（限行与补助，公示载明韩工 0573-86868589）。</p>
+      </div>
+      <div class="ask"><p><b>要问的那一句：</b>方案到 2030 年要换多少辆车、换电站几个点位、布在哪？国四补助第二批为什么只有 4 辆，营运货车到底在不在补助范围？</p></div>
+      <div class="block">
+        <div class="lbl">值不值</div>
+        <p>拿到目标台数与点位，就做"限行管全部、补贴补四辆"；只有"方案已审议"，先放。</p>
+      </div>
+      <div class="block">
+        <div class="lbl">缺什么</div>
+        <p>换车目标台数与年度分解、换电站与充电桩点位、财政资金盘子、国四货车保有量与营运/非营运拆分、使用性质认定口径。不推骗补，不推企业抵触，只核口径。</p>
+      </div>
+      <div class="links">
+        <a class="accent" href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_6d344cc6aa254d79b5aa42ba570119ed.html" target="_blank" rel="noopener">原文 · 方案审议</a>
+        <span class="nodirect">第二批补助名单原稿无直链</span>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="sec">其他观察</h2>
   <ul class="obs">
-    <li><b>广陈农房四个项目，逾千套。</b>新港北苑 113 亩、80 平方米 78 户＋100 平方米 118 户；书香悦府 100 套（5 村 35 户已抽签）；港荣佳苑 512 套明年 3 月竣工；广福锦园 283 套＋40 套宿舍型租赁住房明年 8 月竣工。有具名主任与村民，有竣工月份，今天就能去平朱公路东侧看工地。<span>　缺：全市年度目标、村民自付比例。</span>
-      <div class="links"><a href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_2d0b8a2ffbde45b1b246f8971b86bbe1.html" target="_blank" rel="noopener">读原稿</a></div>
-    </li>
-    <li><b>农业水价改革验收：十二个数字，零个价格。</b>管道 100%、渠系 5171 公里、系数 0.675、年节水 730 万立方米、1463 座泵站计量，唯独没有农业用水价格与亩均水费。<span>　11-09 到期，已有线索卡，不重复写。</span>
-      <div class="links"><a href="https://www.pinghu.gov.cn/col/col1528161/art/2026/art_ac53abfce7594446816143b75eaf3cc9.html" target="_blank" rel="noopener">读原稿</a></div>
-    </li>
-    <li><b>拨投结合：四个月完成首轮融资，出资额仍空着。</b>11-03 评论稿写「财政投入转股权、资产增值两倍以上」；三只基金的出资额与反投比例反馈期 10-29 已过六天，仍无公开数。<span>　两条并线问一次即可。</span>
-      <div class="links"><a href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_a9209b087d5741d1a0a8711247d2b29a.html" target="_blank" rel="noopener">读原稿</a></div>
-    </li>
-    <li><b>规划类公示，四份正文都是空的。</b>新诚达「两创中心」产业园调整规划、经开区学院路与 2026 区域改造提升工程用地预审选址、教育局三级岗位竞聘推荐结果——只有标题与来源。<span>　与 10-26 曹桥排污口「批前批后相隔九分钟」同类，凑够三条才叫模式。</span>
-      <div class="links">
-        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_46fd18c941760a6a0392db380b93fabc.html" target="_blank" rel="noopener">新诚达</a>
-        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_41f2b13fcc0b27da0cd779cebaede695.html" target="_blank" rel="noopener">学院路</a>
-        <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_fc983bc38dd20b12be733fd83cb0d7f0.html" target="_blank" rel="noopener">2026 区域改造</a>
-      </div>
-    </li>
-    <li><b>小红书「平湖备婚人士最爱的婚博会（避雷篇）」11-03，未核。</b>有本地落点、有具体抱怨，但没有本地反应、没有主办方或监管处置记录。<span>　缺第二步，只当找人与找现场的线索。</span></li>
+    <li><b>选举日历开始有数了</b>：11 月 7 日市选举委员会第四次会议，审核确认新仓镇 11 月 6 日选举日结果——18 名市十七届人大代表、79 名镇十六届人大代表；其余镇街"有序推进中"。
+      <span>这是记者的日历，不是稿子。各镇街选举日、市十七届人大一次会议时间都还没公布。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1528160/art/2026/art_c96d24537ff740f9bb09adb6ccfcb493.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
+    <li><b>两个盘同日拿预售，明天公示期满</b>：合计 78,118.96 ㎡，西郊名府 23,201.70 ㎡、松澜云邸 54,917.26 ㎡，两份都写"项目抵押情况：有"。昨天已提，今天仍在等套数与备案均价。
+      <span>受理电话 0573-85631927；公示 11 月 9 日至 11 日。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_5a4fa84c840a48db86ef734f28c29e7d.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">西郊名府</a>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_bec9342fce9c43078e817afd1673c915.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">松澜云邸</a></li>
+    <li><b>养老院医务室注销，同日一家诊所备案</b>：长友养老院医务室 10 月 26 日注销、11 月 9 日 15:54 公告，理由"机构主动申请终止执业活动"；15:55 嘉安诊所备案挂出。
+      <span>院里老人现在在哪开药、医保怎么结算，仍无答案。两条一关一开是否相关，未证。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_769c169ce520bb493b719ec3bede4242.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">注销</a>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_fa6078a30b29402db17968be06da67a4.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">备案</a></li>
+    <li><b>又一份空公示</b>：美凯威奇丙类车间与槽罐车雨棚改造规划批后，正文为空、无附件、无批准文号，只有标题与信息来源。这类空公示到今早已是第 13 份，午后第 14 份又到（见上方钟埭街道用地预审与选址批前）。
+      <span>丙类车间涉消防审查，第一次带安全生产由头。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_7272999df98de6ec731f3603173e618e.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
+    <li><b>糟蛋要申报国家级非遗，先买一套申报材料</b>：技术服务采购公开比选，最高限价 10.5 万元，报名 11 月 13 日 16:00 截止。
+      <span>含申报文本、辅助材料与申报片；联系人钟雅琳 13575331714。</span>
+      <a href="https://www.pinghu.gov.cn/col/col1229406239/art/2026/art_9d7674cb9211db3228d28d7dd48e7993.html" target="_blank" rel="noopener" style="font-size:13px;color:#a83f2b">原文</a></li>
   </ul>
 
-  <h2 class="sec">接 下 来 的 日 子</h2>
+  <h2 class="sec">热榜与社交</h2>
+  <ul class="obs">
+    <li><b>只有一条留着找人</b>：小红书"避雷平湖 ido 婚纱"11 月 8 日续帖，234 赞。
+      <span>标"只记留意"——缺的是受理记录。没有投诉编号前不引用帖文内容。</span></li>
+    <li><b>不接</b>：阿洛伊西兄弟同日离任成都、浙江主帅（无平湖落点）；员工月薪过万按 4000 基数缴社保（全国议题，本地无反应）；"养老金要崩盘"讨论（同上）；涉军自媒体通报、菲律宾强台风旧事（无关）。
+      <span>标"不接"——缺的是落点与本地增量，勉强接只会写成全国稿的转载。</span></li>
+  </ul>
+
+  <h2 class="sec">接下来的日子</h2>
   <ul class="tl">
-    <li><span class="d">11-05</span><span class="t">进博会开幕（至 11-10；8 日起对社会观众开放）</span></li>
-    <li><span class="d">11-06</span><span class="t">国四货车第一批补助公示期满：17 辆淘汰＋1 辆更新，56.5 万元</span></li>
-    <li><span class="d">11-08</span><span class="t">公积金新政执行满月；长护险 11 月第一批评定公示期满</span></li>
-    <li><span class="d">11-10</span><span class="t">28 家拟吊销听证告知期届满（五个工作日）</span></li>
-    <li><span class="d">11-11</span><span class="t">限行意见征询七个工作日届满；双十一</span></li>
-    <li><span class="d">11-30</span><span class="t">林埭智创园一期进场、二期开标的观察点</span></li>
-    <li><span class="d">12-02</span><span class="t">广南食品厂地块异议期届满；本轮试运行期同期结束</span></li>
+    <li class="now"><span class="d">今天 11-10</span><span class="t">进博会闭馆；晚稻收割窗口收尾</span></li>
+    <li><span class="d">11-11</span><span class="t">双十一；烟草布局听证报名 17:00 截止；两份预售公示期满</span></li>
+    <li><span class="d">11-12</span><span class="t">容昇基金书面反馈 17:00 截止；少体校游泳与网球场地租赁响应截止</span></li>
+    <li><span class="d">11-13</span><span class="t">迎峰度冬有序用电公示期满；国四补助第二批公示期满；糟蛋采购报名 16:00 截止</span></li>
+    <li><span class="d">11-16</span><span class="t">烟草制品零售点布局听证会</span></li>
+    <li><span class="d">11-17</span><span class="t">秸秆综合利用补助申报公示期满</span></li>
+    <li><span class="d">11-27</span><span class="t">生命健康产业奖补申报截止（市场监管局收纸质材料）</span></li>
+    <li><span class="d">11-30</span><span class="t">林埭智创园二期招标文件下载截止</span></li>
+    <li><span class="d">12-05</span><span class="t">林埭十个村布点草案意见截止</span></li>
+    <li><span class="d">12-20</span><span class="t">体育中心改造对外承诺完工日</span></li>
   </ul>
 
-  <h2 class="sec">今 天 排 除 了 什 么</h2>
-  <ul class="obs">
-    <li>污水管网爆管应急演练（10-28，新仓亚鑫路）：例行演练，无金额、无期限、无人被改变。</li>
-    <li>三季度经济社会形势分析会（10-31）：通篇「沉甸甸的答卷」，未给一个增速、投资或收入数，无可核口径。</li>
-    <li>新凯路外资廊道侧记：福尔波、欧拓、威克诺森均为 2016 年落户，无新节点、无金额。</li>
-    <li>小红书「咖啡搭子」（平湖文旅）：宣传贴，无事件。</li>
-    <li>南港小鲜避雷贴（10-17）：旧贴，自称「已违法」是主张不是事实，无官方处置记录。</li>
+  <h2 class="sec">今天排除了什么</h2>
+  <ul class="excl">
+    <li>常务会议里的"贯彻全会精神""正确政绩观"等表态段——没有钱、没有人、没有期限。</li>
+    <li>"集群成势 聚势向前""AI 进车间"等产业宣传稿——只有形容词，没有一笔订单。</li>
+    <li>商品房预售两盘——昨天已经写过一遍，今天只在观察里留一行等数据，不重写。</li>
+    <li>进博会——昨天已给过电话，今天闭馆，不重复占位；结果未回，记在电话里。</li>
+    <li>公积金新政满月——逾期两天仍无公开口径，今天不占版面，电话里补。</li>
+    <li>婚礼消费纠纷续帖——内容未核，只作找人线索。</li>
+    <li>热榜四条全国议题——本地无反应、无增量，不借。</li>
+    <li>午后 5 条产业宣传稿（"高举旗帜奏强主流声音""当湖产业项目多点突破""龙头引领""聚力汽配产业跃升""在平湖逛工厂"）——通篇形容词，没有一个金额、日期或企业名，按手册第 3 节整条排除。</li>
   </ul>
 
   <div class="foot">
     <span>内部参考 · 请勿外传</span>
-    <span>2026-11-04　平湖雷达</span>
+    <span>平湖雷达 · 2026-11-10</span>
   </div>
 
 </div>
